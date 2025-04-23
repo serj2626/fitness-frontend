@@ -1,0 +1,9 @@
+export const enum SocialIcons {
+  GITHUB = "fa6-brands:github",
+  LINKEDIN = "fa6-brands:linkedin",
+  TELEGRAM = "fa6-brands:telegram",
+  WHATSAPP = "fa6-brands:whatsapp",
+  MAIL = "fa6-solid:envelope",
+  PHONE = "fa6-solid:phone",
+  VK = "fa6-brands:vk",
+}

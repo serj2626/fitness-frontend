@@ -1,0 +1,37 @@
+<script setup lang="ts">
+const modalsStore = useModalsStore();
+const { activeModals, isAnyModalOpen } = storeToRefs(modalsStore);
+</script>
+<template>
+    <div
+      v-if="isAnyModalOpen"
+      class="modal-wrapper"
+      role="dialog"
+      @click.self="modalsStore.closeAllModals()"
+    >
+      <!-- <LazyModalFeedback v-if="activeModals.has('feedback')" key="feedback" />
+      <LazyMenuComponent v-if="activeModals.has('menu')" key="menu" /> -->
+    </div>
+</template>
+<style lang="scss" scoped>
+.modal-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 110;
+  background: rgba(0, 0, 0, 0.47);
+}
+
+.fade-modal-enter-active,
+.fade-modal-leave-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.fade-modal-enter-from,
+.fade-modal-leave-to {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+</style>
