@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: "BS",
+      title: "Фитнес-клуб DV Fitness",
       htmlAttrs: {
         lang: "ru",
       },

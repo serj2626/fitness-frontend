@@ -1,9 +1,11 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 <template>
-<MainFirstSection />
-<MainAbonements />
+  <MainFirstSection />
+  <MainAbonementsSection />
+  <MainServicesSection />
+  <MainPoolSection />
+  <MainCoachesSection />
+  <MainReviewsSection />
+  <MainContactsSection />
 </template>
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

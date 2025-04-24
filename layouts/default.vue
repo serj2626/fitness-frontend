@@ -3,8 +3,9 @@
     <HeaderComponent />
     <slot />
     <FooterComponent />
-    <LazyScrollToTop />
-    <LazyModalComponent />
+    <ScrollToTop />
+    <ModalComponent />
+    <BaseButtonScrollToTop />
   </div>
 </template>
 <style lang="scss">

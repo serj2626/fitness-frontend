@@ -1,4 +1,4 @@
-@use 'reset';
+@use "reset";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 html {
@@ -25,11 +25,12 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 125%;
-  background-color: $white;
+  // background-color: rgba(0, 0, 0, 0.8);
+  background-color: $bg;
   color: $txt;
   overflow-x: hidden;
   box-sizing: border-box;

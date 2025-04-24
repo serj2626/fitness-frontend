@@ -32,14 +32,26 @@ onUnmounted(() => {
   >
     <nav class="header-component__wraper container">
       <NuxtLink class="header-component__wraper-logo" to="/">
-        DV Fitness <BaseDot />
+        DV <span class="header-component__wraper-logo-text">Fitness</span> <BaseDot />
       </NuxtLink>
       <ul class="header-component__wraper-list">
         <NuxtLink class="header-component__wraper-list-item" to="/">
-          Главная
+          О клубе
         </NuxtLink>
-        <NuxtLink class="header-component__wraper-list-item" to="/coaches">
+        <NuxtLink class="header-component__wraper-list-item" to="/">
+          Абонементы
+        </NuxtLink>
+        <NuxtLink class="header-component__wraper-list-item" to="/">
           Тренеры
+        </NuxtLink>
+        <NuxtLink class="header-component__wraper-list-item" to="/">
+          Контакты
+        </NuxtLink>
+        <NuxtLink class="header-component__wraper-list-item" to="/">
+          Мой профиль
+        </NuxtLink>
+        <NuxtLink class="header-component__wraper-list-item" to="/">
+          Войти
         </NuxtLink>
       </ul>
       <NuxtLink class="header-component__wraper-buy" to="/">
@@ -60,9 +72,9 @@ onUnmounted(() => {
   transition: all 0.5s ease-in-out;
   background-color: transparent;
   padding-block: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   &_opacity {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
   }
   &_hidden {
     transition: transform 0.5s ease-in-out;
@@ -91,6 +103,13 @@ onUnmounted(() => {
     &-logo {
       color: #fff;
       font-size: 24px;
+      font-weight: 600;
+      &-text{
+        font-size: 15px;
+        text-transform: lowercase;
+        font-weight: 500;
+        opacity: 0.8;
+      }
     }
     &-buy {
       &-btn {

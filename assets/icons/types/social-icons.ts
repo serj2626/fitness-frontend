@@ -6,4 +6,6 @@ export const enum SocialIcons {
   MAIL = "fa6-solid:envelope",
   PHONE = "fa6-solid:phone",
   VK = "fa6-brands:vk",
+  GOOGLE = "fa6-brands:google",
+  YANDDEX = "fa6-brands:yandex",
 }

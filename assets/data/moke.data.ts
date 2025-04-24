@@ -1,0 +1,146 @@
+interface IAbonement {
+  title: string;
+  description: string;
+  price: number;
+  period: number;
+}
+
+interface IService {
+  img: string;
+  title: string;
+}
+
+interface IReview {
+  id: number;
+  text: string;
+  author: {
+    name: string;
+    avatar: string;
+    date: string;
+    platforma: string;
+  };
+  rating: number;
+  company: {
+    name: string;
+    subName: string;
+  };
+}
+
+export const abonements: IAbonement[] = [
+  {
+    title: "Базовый",
+    description: "Базовый абонемент",
+    price: 10000,
+    period: 9,
+  },
+  {
+    title: "Профессионал",
+    description: "Профессиональный абонемент",
+    price: 15000,
+    period: 12,
+  },
+  {
+    title: "Эксперт",
+    description: "Экспертский абонемент",
+    price: 20000,
+    period: 15,
+  },
+];
+
+export const services: IService[] = [
+  {
+    img: "/services/gym.jpg",
+    title: "Тренажерный зал",
+  },
+  {
+    img: "/services/pool.png",
+    title: "Бассейн",
+  },
+  {
+    img: "/services/saicle.jpg",
+    title: "Студия сайкла",
+  },
+  {
+    img: "/services/yoga.jpg",
+    title: "Студия йоги",
+  },
+  {
+    img: "/services/spa.jpg",
+    title: "SPA зона",
+  },
+  {
+    img: "/services/aqva.jpg",
+    title: "Аквааэробика",
+  },
+  {
+    img: "/services/kosmetolog.png",
+    title: "Косметология",
+  },
+  {
+    img: "/services/dance.png",
+    title: "Студия танцев",
+  },
+];
+
+export const reviews: IReview[] = [
+  {
+    id: 1,
+    author: {
+      name: "Alex Sidorov",
+      avatar: "/yandex.webp",
+      platforma: "Яндекс",
+      date: "12.12.2022",
+    },
+    rating: 4,
+    text: "Достаточно хороший и удобный зал. Нет толп тренеров и народу, можно спокойно заниматься",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
+  {
+    id: 2,
+    author: {
+      name: "Denis Kivanov",
+      avatar: "/google.webp",
+      platforma: "Google",
+      date: "12.12.2022",
+    },
+    rating: 5,
+    text: "Вежливый персонал. Хорошая парилка. Всё прекрасно, когда народа немного.",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
+  {
+    id: 3,
+    author: {
+      name: "Olga Zamaylova",
+      avatar: "/yandex.webp",
+      platforma: "Яндекс",
+      date: "12.12.2022",
+    },
+    rating: 5,
+    text: "Хороший удобный зал. Тренер Максим профессионал своего дела. Очень любезные работники. Менеджер Ани очень помогла при покупке абонемента. Чисто, уютно. Хорошая обстановка",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
+  {
+    id: 4,
+    author: {
+      name: "Maxim Ivanov",
+      avatar: "/2gis.png",
+      platforma: "2GIS",
+      date: "12.12.2022",
+    },
+    rating: 3,
+    text: "Как же мне нравится этот клуб! Великолепный бассейн, широкий выбор тренажеров и групповых программ!...",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
+];

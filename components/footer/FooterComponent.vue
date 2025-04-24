@@ -2,10 +2,13 @@
 
 </script>
 <template>
-  <div>
+  <footer class="footer-component">
     
-  </div>
+  </footer>
 </template>
 <style lang="scss">
-
+.footer-component{
+  height: 300px;
+  border-top: 1px solid $accent;
+}
 </style>
