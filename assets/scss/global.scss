@@ -14,14 +14,16 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 4px;
-  background-color: rgb(229, 229, 229);
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: $txt;
+  background-color: $accent;
+  border-radius: 8px;
 }
 
 body {

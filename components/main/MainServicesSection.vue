@@ -10,7 +10,24 @@ import { HeroIcons } from "~/assets/icons/types/hero-icons";
       :slides-per-view="4"
       :space-between="0"
       :loop="true"
-      :autoplay="{ delay: 3000 }"
+      :breakpoints="{
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 15,
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+      }"
       class="my-swiper"
     >
       <SwiperSlide v-for="(slide, idx) in services" :key="idx" class="slide">
@@ -39,9 +56,9 @@ import { HeroIcons } from "~/assets/icons/types/hero-icons";
 
   &__title {
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 10%;
-    transform: translate(-10%, -10%);
+    transform: translate(-10%, -5%);
     z-index: 100;
     color: $white;
     text-align: center;

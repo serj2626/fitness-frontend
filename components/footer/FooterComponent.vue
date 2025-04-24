@@ -9,6 +9,6 @@
 <style lang="scss">
 .footer-component{
   height: 300px;
-  border-top: 1px solid $accent;
+  border-top: 1px solid #ffc55178;
 }
 </style>

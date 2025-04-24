@@ -29,7 +29,7 @@ const priceAbon = (rub: number) => {
               <span
                 class="main-abonements-section__wraper-list-item-body-price"
               >
-               {{ priceAbon(abon.price) }} &nbsp;₽
+                {{ priceAbon(abon.price) }} &nbsp;₽
               </span>
               <span
                 class="main-abonements-section__wraper-list-item-body-period"
@@ -167,6 +167,7 @@ const priceAbon = (rub: number) => {
         }
       }
       &-btn {
+        position: relative;
         margin-top: 30px;
         width: 100%;
         padding: 15px 0;
@@ -175,11 +176,29 @@ const priceAbon = (rub: number) => {
         border-radius: 10px;
         border: 1px solid $accent;
         cursor: pointer;
+        overflow: hidden;
         transition: all 0.3s ease-in;
+        z-index: 100;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0;
+          background-color: $accent;
+          transition: all 0.5s ease-in;
+          z-index: 0; // важный момент: ниже текста
+        }
+
+        &:hover:before {
+          width: 100%;
+          color: $grey;
+        }
 
         &:hover {
-          background-color: $accent;
-          color: $txt;
+          color: $txt; // текст станет черным, например
         }
       }
 

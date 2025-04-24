@@ -6,6 +6,6 @@
   <MainPoolSection />
   <MainCoachesSection />
   <MainReviewsSection />
-  <MainContactsSection />
+  <MainFeedbackSection />
 </template>
 <style lang="scss"></style>

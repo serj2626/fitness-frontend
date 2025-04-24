@@ -18,16 +18,29 @@ import { reviews } from "~/assets/data/moke.data";
               :src="review.author.avatar"
               :alt="review.author.name"
             />
-            <div
-              class="main-reviews-section__wraper-list-item-header-author"
-            ></div>
+            <div class="main-reviews-section__wraper-list-item-header-author">
+              <span
+                >{{ review.author.platforma }}
+                <Icon
+                  :name="HeroIcons.ARROW_UP"
+                  style="rotate: 45deg; cursor: pointer"
+                  size="14"
+                />
+              </span>
+              <div
+                class="main-reviews-section__wraper-list-item-header-author-date"
+              >
+                <p>{{ review.author.name }}</p>
+                <p>{{ review.author.date }}</p>
+              </div>
+            </div>
             <div class="main-reviews-section__wraper-list-item-header-raing">
               <Icon
                 v-for="x in 5"
                 :key="x"
                 class="main-reviews-section__wraper-list-item-header-raing-icon"
                 :name="HeroIcons.STAR"
-                size="22"
+                size="20"
               />
             </div>
           </div>
@@ -80,9 +93,29 @@ import { reviews } from "~/assets/data/moke.data";
           margin: 0;
           border-bottom: 1px solid transparent;
           display: flex;
-          align-items: center;
+          align-items: start;
           justify-content: space-between;
           padding: 1.5em 22px 0.8em;
+          &-author {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            &-date {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              color: #787878;
+              font-size: 15px;
+              font-weight: 500;
+              opacity: 0.8;
+            }
+          }
+          &-rating {
+            &:deep(.iconify) {
+              background-color: $accent !important;
+            }
+          }
         }
         &-body {
           padding: 0 22px;
@@ -108,7 +141,7 @@ import { reviews } from "~/assets/data/moke.data";
               font-weight: 600;
             }
             &-name {
-              color: #787878;
+              color: #635757;
               &-sub {
                 font-size: 15px;
                 text-transform: lowercase;
