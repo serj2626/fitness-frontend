@@ -1,51 +1,20 @@
 <script lang="ts" setup>
 import { HeroIcons } from "~/assets/icons/types/hero-icons";
 import { coaches } from "~/assets/data/moke.data";
-import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 </script>
 <template>
   <section id="main-coaches-section" class="main-coaches-section">
     <div class="main-coaches-section__wraper">
-      <Swiper
-        :slides-per-view="6"
-        :space-between="20"
-        :loop="true"
-        :autoplay="{
-          delay: 2500,
-        }"
-        :breakpoints="{
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-          375: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 6,
-            spaceBetween: 30,
-          },
-          1280: {
-            slidesPerView: 5,
-            spaceBetween: 20,
-          },
-        }"
-        class="my-swiper"
-      >
-        <SwiperSlide v-for="(slide, idx) in coaches" :key="idx" class="slide">
+      <BaseSwiper :desctop-count="5" :auto-delay="2000">
+        <swiper-slide v-for="(slide, idx) in coaches" :key="idx" class="slide">
           <p class="slide__title">{{ slide.name }}</p>
           <button class="slide__btn">
             <Icon class="slide__btn-icon" :name="HeroIcons.UP" />
           </button>
           <NuxtImg :src="slide.img" :alt="slide.name" class="slide__img" />
-        </SwiperSlide>
-      </Swiper>
+        </swiper-slide>
+      </BaseSwiper>
     </div>
   </section>
 </template>

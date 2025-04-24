@@ -1,43 +1,19 @@
 <script lang="ts" setup>
 import { services } from "~/assets/data/moke.data";
-import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import { HeroIcons } from "~/assets/icons/types/hero-icons";
 </script>
 <template>
   <section id="main-services-section" class="main-services-section">
-    <Swiper
-      :slides-per-view="4"
-      :space-between="0"
-      :loop="true"
-      :breakpoints="{
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 15,
-        },
-        1280: {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-      }"
-      class="my-swiper"
-    >
-      <SwiperSlide v-for="(slide, idx) in services" :key="idx" class="slide">
+    <BaseSwiper :desctop-between="0" :auto-delay="0">
+      <swiper-slide v-for="(slide, idx) in services" :key="idx" class="slide">
         <p class="slide__title">{{ slide.title }}</p>
         <button class="slide__btn">
           <Icon class="slide__btn-icon" :name="HeroIcons.UP" />
         </button>
         <NuxtImg :src="slide.img" :alt="slide.title" class="slide__img" />
-      </SwiperSlide>
-    </Swiper>
+      </swiper-slide>
+    </BaseSwiper>
   </section>
 </template>
 <style lang="scss" scoped>

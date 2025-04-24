@@ -8,6 +8,8 @@ const {
   laptopBetween = 20,
   desctopCount = 4,
   desctopBetween = 20,
+  autoDelay = 1500,
+  loop = true,
 } = defineProps<{
   mobileCount?: number;
   mobileBetween?: number;
@@ -17,14 +19,18 @@ const {
   laptopBetween?: number;
   desctopCount?: number;
   desctopBetween?: number;
+  autoDelay?: number;
+  loop?: boolean;
 }>();
 
 const containerRef = ref(null);
 const swiper = useSwiper(containerRef, {
-  loop: true,
-  autoplay: {
-    delay: 1500,
-  },
+  loop,
+  ...(autoDelay > 0 && {
+    autoplay: {
+      delay: autoDelay,
+    },
+  }),
   breakpoints: {
     0: {
       slidesPerView: mobileCount,
@@ -44,18 +50,15 @@ const swiper = useSwiper(containerRef, {
     },
   },
 });
-
 onMounted(() => {
   console.log(swiper.instance);
 });
 </script>
 
 <template>
-    <ClientOnly>
-      <swiper-container ref="containerRef" :init="false">
-        <slot />
-      </swiper-container>
-    </ClientOnly>
+  <ClientOnly>
+    <swiper-container ref="containerRef" :init="false">
+      <slot />
+    </swiper-container>
+  </ClientOnly>
 </template>
-
-<style lang="css"></style>
