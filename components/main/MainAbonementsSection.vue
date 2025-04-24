@@ -121,12 +121,31 @@ const priceAbon = (rub: number) => {
   </section>
 </template>
 <style lang="scss" scoped>
+.main-abonements-section__wraper-list-item:hover {
+  .main-abonements-section__wraper-list-item-btn {
+    color: $txt;
+    &:before {
+      transform: scale3d(1, 1, 1);
+      transform-origin: 0% 50%;
+      transition-timing-function: ease;
+    }
+  }
+}
+
 .main-abonements-section {
   padding-block: 100px;
   &__wraper-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @include mediaTablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+    @include mediaLaptop {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     &-item {
       padding: 25px 32px;
@@ -134,11 +153,11 @@ const priceAbon = (rub: number) => {
       border-radius: 15px;
       border: 1px solid rgba(255, 255, 255, 0.222);
       color: $white;
-      transition: all 0.5s ease-in;
+      transition: all 0.35s ease-in;
 
       &:hover {
         box-shadow: 0 0 20px $accent;
-        scale: 1.1;
+        // scale: 1.1;
       }
       &-top {
         text-transform: uppercase;
@@ -178,27 +197,22 @@ const priceAbon = (rub: number) => {
         cursor: pointer;
         overflow: hidden;
         transition: all 0.3s ease-in;
-        z-index: 100;
+        z-index: 2;
 
         &:before {
           content: "";
           position: absolute;
-          top: 0;
           left: 0;
-          height: 100%;
-          width: 0;
-          background-color: $accent;
-          transition: all 0.5s ease-in;
-          z-index: 0; // важный момент: ниже текста
-        }
-
-        &:hover:before {
+          bottom: 0;
           width: 100%;
-          color: $grey;
-        }
-
-        &:hover {
-          color: $txt; // текст станет черным, например
+          height: 100%;
+          background-color: $accent;
+          z-index: -1;
+          transition: transform 0.35s;
+          transition-timing-function: cubic-bezier(0.05, 0.73, 0.48, 0.97);
+          transform: scale3d(0, 1, 1);
+          transform-origin: 100% 50%;
+          will-change: transform, background-color;
         }
       }
 
