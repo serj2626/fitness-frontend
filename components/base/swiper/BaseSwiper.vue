@@ -1,21 +1,14 @@
 <script setup lang="ts">
-export interface IContactsImage {
-  path: string;
-  alt: string;
-}
-
 const {
-  images = [],
   mobileCount = 1,
-  mobileBetween = 40,
-  tabletCount = 4,
+  mobileBetween = 20,
+  tabletCount = 3,
   tabletBetween = 30,
-  laptopCount = 6,
+  laptopCount = 4,
   laptopBetween = 20,
-  desctopCount = 8,
+  desctopCount = 4,
   desctopBetween = 20,
 } = defineProps<{
-  images: IContactsImage[];
   mobileCount?: number;
   mobileBetween?: number;
   tabletCount?: number;
@@ -28,8 +21,6 @@ const {
 
 const containerRef = ref(null);
 const swiper = useSwiper(containerRef, {
-  slidesPerView: 1,
-  spaceBetween: 15,
   loop: true,
   autoplay: {
     delay: 1500,
@@ -60,29 +51,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="main-partners container">
     <ClientOnly>
       <swiper-container ref="containerRef" :init="false">
-        <BaseSwiperSlider
-          v-if="Array.isArray(images) && images.length"
-          :images="images"
-        />
+        <slot />
       </swiper-container>
     </ClientOnly>
-  </div>
 </template>
 
-<style lang="css">
-.main-partners {
-  padding-block: 48px 140px;
-}
-
-swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 170px;
-  height: 45px;
-}
-</style>
+<style lang="css"></style>

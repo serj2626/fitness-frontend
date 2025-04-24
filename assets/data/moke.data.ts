@@ -242,4 +242,64 @@ export const reviews: IReview[] = [
       subName: "Fitness",
     },
   },
+  {
+    id: 5,
+    author: {
+      name: "Ivan Petrov",
+      avatar: "/google.webp",
+      platforma: "Google",
+      date: "12.12.2022",
+    },
+    rating: 4,
+    text: "Прекрасный зал, хороший персонал, хорошая парилка. Приятный атмосфера. Рекомендую!",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
+  {
+    id: 6,
+    author: {
+      name: "Ivan Petrov",
+      avatar: "/yandex.webp",
+      platforma: "Яндекс",
+      date: "12.12.2022",
+    },
+    rating: 4,
+    text: "Прекрасный зал, хороший персонал, хорошая парилка. Приятный атмосфера. Рекомендую!",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
+  {
+    id: 7,
+    author: {
+      name: "Ivan Petrov",
+      avatar: "/google.webp",
+      platforma: "Google",
+      date: "12.12.2022",
+    },
+    rating: 4,
+    text: "Прекрасный зал, хороший персонал, хорошая парилка. Приятный атмосфера. Рекомендую!",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
+  {
+    id: 8,
+    author: {
+      name: "Ivan Petrov",
+      avatar: "/yandex.webp",
+      platforma: "Яндекс",
+      date: "12.12.2022",
+    },
+    rating: 4,
+    text: "Прекрасный зал, хороший персонал, хорошая парилка. Приятный атмосфера. Рекомендую!",
+    company: {
+      name: "DV",
+      subName: "Fitness",
+    },
+  },
 ];
