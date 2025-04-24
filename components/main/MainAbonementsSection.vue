@@ -11,8 +11,11 @@ const priceAbon = (rub: number) => {
 </script>
 <template>
   <section id="main-abonements-section" class="main-abonements-section">
-    <div class="main-abonement-section__wraper container">
-      <!-- <h2 class="main-abonements-section__wraper">Наши абонементы</h2> -->
+    <div
+      class="main-abonement-section__wraper container"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <ul class="main-abonements-section__wraper-list">
         <li
           v-for="abon in abonements"

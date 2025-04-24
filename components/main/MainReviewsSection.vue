@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
 
-const containerRef = ref(null);
+// const containerRef = ref(null);
 // const swiper = useSwiper(containerRef, {
 //   effect: "creative",
 //   loop: true,

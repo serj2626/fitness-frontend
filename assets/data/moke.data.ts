@@ -10,7 +10,7 @@ interface IService {
   title: string;
 }
 
-interface IReview {
+export interface IReview {
   id: number;
   text: string;
   author: {
