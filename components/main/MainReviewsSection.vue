@@ -1,214 +1,51 @@
 <script lang="ts" setup>
-import { HeroIcons } from "~/assets/icons/types/hero-icons";
 import { reviews } from "~/assets/data/moke.data";
 </script>
 <template>
   <section id="main-reviews-section" class="main-reviews-section">
     <BaseSwiper>
       <swiper-slide v-for="(review, idx) in reviews" :key="idx" class="slide">
-        <div class="review">
-          <div class="review__header">
-            <NuxtImg
-              width="50"
-              height="50"
-              :src="review.author.avatar"
-              :alt="review.author.name"
-            />
-            <div class="review__header-author">
-              <span
-                >{{ review.author.platforma }}
-                <Icon
-                  :name="HeroIcons.ARROW_UP"
-                  style="rotate: 45deg; cursor: pointer"
-                  size="14"
-                />
-              </span>
-              <div class="review__header-author-date">
-                <p>{{ review.author.name }}</p>
-                <p>{{ review.author.date }}</p>
-              </div>
-            </div>
-            <div class="review__header-raing">
-              <Icon
-                v-for="x in 5"
-                :key="x"
-                class="review__header-raing-icon"
-                :name="HeroIcons.STAR"
-                size="20"
-              />
-            </div>
-          </div>
-          <div class="review__body">
-            <p class="review__body-text">
-              {{ review.text }}
-            </p>
-          </div>
-          <div class="review__footer">
-            <div class="review__footer-company">
-              <Icon
-                :name="HeroIcons.COMPANY"
-                class="review__footer-company-icon"
-              />
-              <p class="review__footer-company-name">
-                {{ review.company.name }}
-                <span class="review__footer-company-name-sub">{{
-                  review.company.subName
-                }}</span>
-                <BaseDot />
-              </p>
-            </div>
-          </div>
-        </div>
+        <ReviewComponent :review />
       </swiper-slide>
     </BaseSwiper>
-    <!-- <Swiper
-        :loop="true"
-        :autoplay="{
-          delay: 2500,
-        }"
-        :breakpoints="{
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-          375: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-          1280: {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-        }"
-        class="my-swiper"
-      >
-        <SwiperSlide v-for="(review, idx) in reviews" :key="idx" class="slide">
-          <div class="review">
-            <div class="review__header">
-              <NuxtImg
-                width="50"
-                height="50"
-                :src="review.author.avatar"
-                :alt="review.author.name"
-              />
-              <div class="review__header-author">
-                <span
-                  >{{ review.author.platforma }}
-                  <Icon
-                    :name="HeroIcons.ARROW_UP"
-                    style="rotate: 45deg; cursor: pointer"
-                    size="14"
-                  />
-                </span>
-                <div class="review__header-author-date">
-                  <p>{{ review.author.name }}</p>
-                  <p>{{ review.author.date }}</p>
-                </div>
-              </div>
-              <div class="review__header-raing">
-                <Icon
-                  v-for="x in 5"
-                  :key="x"
-                  class="review__header-raing-icon"
-                  :name="HeroIcons.STAR"
-                  size="20"
-                />
-              </div>
-            </div>
-            <div class="review__body">
-              <p class="review__body-text">
-                {{ review.text }}
-              </p>
-            </div>
-            <div class="review__footer">
-              <div class="review__footer-company">
-                <Icon
-                  :name="HeroIcons.COMPANY"
-                  class="review__footer-company-icon"
-                />
-                <p class="review__footer-company-name">
-                  {{ review.company.name }}
-                  <span class="review__footer-company-name-sub">{{
-                    review.company.subName
-                  }}</span>
-                  <BaseDot />
-                </p>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper> -->
-
-    <!-- <ClientOnly>
-      <swiper-container ref="containerRef" :init="false">
-        <swiper-slide v-for="(review, idx) in reviews" :key="idx">
-          <div class="review">
-            <div class="review__header">
-              <NuxtImg
-                width="50"
-                height="50"
-                :src="review.author.avatar"
-                :alt="review.author.name"
-              />
-              <div class="review__header-author">
-                <span
-                  >{{ review.author.platforma }}
-                  <Icon
-                    :name="HeroIcons.ARROW_UP"
-                    style="rotate: 45deg; cursor: pointer"
-                    size="14"
-                  />
-                </span>
-                <div class="review__header-author-date">
-                  <p>{{ review.author.name }}</p>
-                  <p>{{ review.author.date }}</p>
-                </div>
-              </div>
-              <div class="review__header-raing">
-                <Icon
-                  v-for="x in 5"
-                  :key="x"
-                  class="review__header-raing-icon"
-                  :name="HeroIcons.STAR"
-                  size="20"
-                />
-              </div>
-            </div>
-            <div class="review__body">
-              <p class="review__body-text">
-                {{ review.text }}
-              </p>
-            </div>
-            <div class="review__footer">
-              <div class="review__footer-company">
-                <Icon
-                  :name="HeroIcons.COMPANY"
-                  class="review__footer-company-icon"
-                />
-                <p class="review__footer-company-name">
-                  {{ review.company.name }}
-                  <span class="review__footer-company-name-sub">{{
-                    review.company.subName
-                  }}</span>
-                  <BaseDot />
-                </p>
-              </div>
-            </div>
-          </div>
-        </swiper-slide>
-      </swiper-container>
-    </ClientOnly> -->
   </section>
 </template>
 <style lang="scss" scoped>
+// .swiper-pagination {
+//   position: absolute;
+//   bottom: 20px; /* Отступ снизу */
+//   left: 0;
+//   width: 100%;
+//   height: 5px; /* Высота прогресс-бара */
+//   background-color: rgba(0, 0, 0, 0.3); /* Цвет фона */
+//   border-radius: 10px; /* Радиус скругления */
+// }
+
+// .swiper-pagination-progressbar {
+//   background-color: #ffcc00;
+//   height: 100%;
+//   transition: width 0.3s ease-in-out; /* Плавное изменение ширины */
+// }
+.swiper-button-prev,
+.swiper-button-next {
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  color: #fff;
+  font-size: 24px;
+  z-index: 10;
+  border-radius: 5%;
+}
+
+.swiper-button-prev {
+}
+
+.swiper-button-next {
+}
+
 .main-reviews-section {
   padding: 100px 30px;
 }

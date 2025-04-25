@@ -26,4 +26,6 @@ export const enum HeroIcons {
   USER = "i-heroicons-user",
   VIDEO = "i-heroicons-video-camera",
   STAR = "i-heroicons-star",
+  CHEVRON_RIGHT = "i-heroicons-chevron-right",
+  CHEVRON_LEFT = "i-heroicons-chevron-left",
 }

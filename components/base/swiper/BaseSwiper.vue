@@ -21,6 +21,7 @@ const {
   desctopBetween?: number;
   autoDelay?: number;
   loop?: boolean;
+  pagination?: boolean;
 }>();
 
 const containerRef = ref(null);
@@ -29,8 +30,16 @@ const swiper = useSwiper(containerRef, {
   ...(autoDelay > 0 && {
     autoplay: {
       delay: autoDelay,
+      disableOnInteraction: false,
     },
   }),
+  // pagination: {
+  //   type: "progressbar", // Используем прогресс-бар
+  // },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   breakpoints: {
     0: {
       slidesPerView: mobileCount,

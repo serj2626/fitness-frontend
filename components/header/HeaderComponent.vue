@@ -74,7 +74,7 @@ onUnmounted(() => {
   padding-block: 10px;
   // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   &_opacity {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
   }
   &_hidden {
     transition: transform 0.5s ease-in-out;

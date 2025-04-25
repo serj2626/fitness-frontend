@@ -1,13 +1,25 @@
+interface IService {
+  img?: string;
+  title: string;
+  value?: boolean;
+}
+
+interface IAbonementService {
+  unlimited: IService;
+  pool: IService;
+  spa: IService;
+  cosmetology: IService;
+  yoga: IService;
+  cycle: IService;
+  dancing: IService;
+  aqua_aerobics: IService;
+}
 interface IAbonement {
   title: string;
   description: string;
   price: number;
   period: number;
-}
-
-interface IService {
-  img: string;
-  title: string;
+  services: IAbonementService;
 }
 
 export interface IReview {
@@ -129,20 +141,123 @@ export const abonements: IAbonement[] = [
   {
     title: "Базовый",
     description: "Базовый абонемент",
-    price: 10000,
+    price: 18000,
     period: 9,
+    services: {
+      unlimited: {
+        title: "Безлимитные посещения",
+        value: true,
+      },
+      pool: {
+        title: "Бассейн",
+        value: true,
+      },
+      yoga: {
+        title: "Йога",
+        value: false,
+      },
+      spa: {
+        title: "SPA",
+        value: false,
+      },
+      cosmetology: {
+        title: "Косметология",
+        value: false,
+      },
+      cycle: {
+        title: "Сайкл",
+        value: false,
+      },
+      dancing: {
+        title: "Танцы",
+        value: false,
+      },
+      aqua_aerobics: {
+        title: "Водная аэробика",
+        value: false,
+      },
+    },
   },
+
   {
     title: "Профессионал",
     description: "Профессиональный абонемент",
-    price: 15000,
+    price: 32000,
     period: 12,
+    services: {
+      unlimited: {
+        title: "Безлимитные посещения",
+        value: true,
+      },
+      pool: {
+        title: "Бассейн",
+        value: true,
+      },
+      yoga: {
+        title: "Йога",
+        value: true,
+      },
+      spa: {
+        title: "SPA",
+        value: true,
+      },
+      cosmetology: {
+        title: "Косметология",
+        value: false,
+      },
+      cycle: {
+        title: "Сайкл",
+        value: false,
+      },
+      dancing: {
+        title: "Танцы",
+        value: false,
+      },
+      aqua_aerobics: {
+        title: "Водная аэробика",
+        value: false,
+      },
+    },
   },
   {
     title: "Эксперт",
     description: "Экспертский абонемент",
-    price: 20000,
+    price: 50000,
     period: 15,
+    services: {
+      unlimited: {
+        title: "Безлимитные посещения",
+        value: true,
+      },
+      pool: {
+        title: "Бассейн",
+        value: true,
+      },
+      yoga: {
+        title: "Йога",
+        value: true,
+      },
+      spa: {
+        title: "SPA",
+        value: true,
+      },
+      cosmetology: {
+        title: "Косметология",
+        value: true,
+      },
+      cycle: {
+        title: "Сайкл",
+        value: true,
+      },
+      dancing: {
+        title: "Танцы",
+        value: true,
+      },
+      aqua_aerobics: {
+        title: "Водная аэробика",
+        value: true,
+      },
+    },
   },
 ];
 

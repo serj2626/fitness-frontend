@@ -49,68 +49,19 @@ const priceAbon = (rub: number) => {
               class="main-abonements-section__wraper-list-item-footer-services"
             >
               <li
+                v-for="(service, idx) in abon.services"
+                :key="idx"
                 class="main-abonements-section__wraper-list-item-footer-services-item"
               >
                 <Icon
                   class="main-abonements-section__wraper-list-item-footer-services-item-icon"
+                  :style="{ color: service.value ? '#ffc451' : 'red' }"
                   :name="HeroIcons.CHECK"
                 />
                 <span
                   class="main-abonements-section__wraper-list-item-footer-services-item-text"
                 >
-                  Безлимитные тренировки
-                </span>
-              </li>
-              <li
-                class="main-abonements-section__wraper-list-item-footer-services-item"
-              >
-                <Icon
-                  class="main-abonements-section__wraper-list-item-footer-services-item-icon"
-                  :name="HeroIcons.CHECK"
-                />
-                <span
-                  class="main-abonements-section__wraper-list-item-footer-services-item-text"
-                >
-                  Бассейн
-                </span>
-              </li>
-              <li
-                class="main-abonements-section__wraper-list-item-footer-services-item"
-              >
-                <Icon
-                  class="main-abonements-section__wraper-list-item-footer-services-item-icon"
-                  :name="HeroIcons.CHECK"
-                />
-                <span
-                  class="main-abonements-section__wraper-list-item-footer-services-item-text"
-                >
-                  SPA
-                </span>
-              </li>
-              <li
-                class="main-abonements-section__wraper-list-item-footer-services-item"
-              >
-                <Icon
-                  class="main-abonements-section__wraper-list-item-footer-services-item-icon"
-                  :name="HeroIcons.CHECK"
-                />
-                <span
-                  class="main-abonements-section__wraper-list-item-footer-services-item-text"
-                >
-                  Косметология
-                </span>
-              </li>
-              <li
-                class="main-abonements-section__wraper-list-item-footer-services-item"
-              >
-                <Icon
-                  class="main-abonements-section__wraper-list-item-footer-services-item-icon"
-                  :name="HeroIcons.CHECK"
-                />
-                <span
-                  class="main-abonements-section__wraper-list-item-footer-services-item-text"
-                >
-                  Йога
+                  {{ service.title }}
                 </span>
               </li>
             </ul>
@@ -231,7 +182,8 @@ const priceAbon = (rub: number) => {
             align-items: center;
             gap: 10px;
             &-icon {
-              color: $accent;
+              // #ffc451
+              // color: $accent;
               font-size: 26px;
             }
           }
