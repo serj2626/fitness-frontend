@@ -5,7 +5,12 @@ import { HeroIcons } from "~/assets/icons/types/hero-icons";
 </script>
 <template>
   <section id="main-services-section" class="main-services-section">
-    <BaseSwiper :desctop-between="0" :auto-delay="0">
+    <BaseSwiper 
+      :desctop-between="0" 
+      :laptop-between="0"
+      :tablet-between="0"
+      :auto-delay="0"
+    >
       <swiper-slide v-for="(slide, idx) in services" :key="idx" class="slide">
         <p class="slide__title">{{ slide.title }}</p>
         <button class="slide__btn">

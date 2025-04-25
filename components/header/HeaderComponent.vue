@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { HeroIcons } from "~/assets/icons/types/hero-icons";
+const modalsStore = useModalsStore();
+
 const isHidden = ref(false);
 const lastScrollY = ref<number>(0);
 
@@ -32,7 +35,8 @@ onUnmounted(() => {
   >
     <nav class="header-component__wraper container">
       <NuxtLink class="header-component__wraper-logo" to="/">
-        DV <span class="header-component__wraper-logo-text">Fitness</span> <BaseDot />
+        DV <span class="header-component__wraper-logo-text">Fitness</span>
+        <BaseDot />
       </NuxtLink>
       <ul class="header-component__wraper-list">
         <NuxtLink class="header-component__wraper-list-item" to="/">
@@ -54,11 +58,17 @@ onUnmounted(() => {
           Войти
         </NuxtLink>
       </ul>
-      <NuxtLink class="header-component__wraper-buy" to="/">
-        <button class="header-component__wraper-buy-btn">
-          Купить абонемент
-        </button>
-      </NuxtLink>
+      <BaseButton
+        class="header-component__wraper-buy"
+        label="Купить абонемент"
+        @click="modalsStore.openModal('orderAbonement')"
+      />
+      <button class="header-component__wraper-burger">
+        <Icon
+          class="header-component__wraper-burger-icon"
+          :name="HeroIcons.BURGER_MENU"
+        />
+      </button>
     </nav>
   </header>
 </template>
@@ -72,13 +82,20 @@ onUnmounted(() => {
   transition: all 0.5s ease-in-out;
   background-color: transparent;
   padding-block: 10px;
-  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   &_opacity {
+    display: none;
     background-color: rgba(0, 0, 0, 0.7);
+    @include mediaLaptop {
+      display: block;
+    }
   }
   &_hidden {
+    display: none;
     transition: transform 0.5s ease-in-out;
     transform: translateY(-100%);
+    @include mediaLaptop {
+      display: block;
+    }
   }
   &__wraper {
     padding-inline: 12px;
@@ -87,14 +104,23 @@ onUnmounted(() => {
     justify-content: space-between;
 
     &-list {
-      display: flex;
+      display: none;
       align-items: center;
-      gap: 30px;
+      gap: 15px;
+      @include mediaLaptop {
+        display: flex;
+      }
+      @include mediaDesktop {
+        gap: 30px;
+      }
       &-item {
+        font-size: 15px;
         color: $header_link;
         padding-block: 18px;
         transition: color 0.3s ease-in-out;
-
+        @include mediaDesktop {
+          font-size: 16px;
+        }
         &:hover {
           color: $accent;
         }
@@ -104,7 +130,7 @@ onUnmounted(() => {
       color: #fff;
       font-size: 24px;
       font-weight: 600;
-      &-text{
+      &-text {
         font-size: 15px;
         text-transform: lowercase;
         font-weight: 500;
@@ -112,17 +138,27 @@ onUnmounted(() => {
       }
     }
     &-buy {
-      &-btn {
-        font-size: 14px;
-        padding: 8px 30px;
-        border-radius: 4px;
-        transition: all 0.3s ease-in;
-        border: 2px solid $accent;
-        color: $header_link;
-
-        &:hover {
-          background-color: $accent;
-          color: $txt;
+      display: none;
+      @include mediaLaptop {
+        display: block;
+      }
+    }
+    &-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &-icon {
+        font-size: 36px;
+        color: $accent;
+        transition: all 0.2s ease-in;
+        &:active {
+          scale: 0.91;
+        }
+        @include mediaTablet {
+          font-size: 40px;
+        }
+        @include mediaLaptop {
+          display: none;
         }
       }
     }

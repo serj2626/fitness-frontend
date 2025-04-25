@@ -33,9 +33,13 @@ const swiper = useSwiper(containerRef, {
       disableOnInteraction: false,
     },
   }),
-  // pagination: {
-  //   type: "progressbar", // Используем прогресс-бар
-  // },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return `<span class="${className}"><span class="bullet-inner"></span></span>`;
+    },
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -68,6 +72,39 @@ onMounted(() => {
   <ClientOnly>
     <swiper-container ref="containerRef" :init="false">
       <slot />
+      <div class="swiper-pagination"></div>
     </swiper-container>
   </ClientOnly>
 </template>
+<style lang="scss" scoped>
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  width: 40px;
+  height: 6px;
+  background-color: #e0e0e0; /* серый цвет */
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #c1a27d; /* бежевый цвет */
+}
+
+.swiper-pagination-bullet-active::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #c1a27d;
+}
+</style>

@@ -3,7 +3,7 @@
     <HeaderComponent />
     <slot />
     <FooterComponent />
-    <ScrollToTop />
+    <BaseButtonScrollToTop />
     <ModalComponent />
     <BaseButtonScrollToTop />
   </div>

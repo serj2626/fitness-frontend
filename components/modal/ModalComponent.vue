@@ -3,15 +3,20 @@ const modalsStore = useModalsStore();
 const { activeModals, isAnyModalOpen } = storeToRefs(modalsStore);
 </script>
 <template>
-    <div
-      v-if="isAnyModalOpen"
-      class="modal-wrapper"
-      role="dialog"
-      @click.self="modalsStore.closeAllModals()"
-    >
-      <!-- <LazyModalFeedback v-if="activeModals.has('feedback')" key="feedback" />
+  <div
+    v-if="isAnyModalOpen"
+    class="modal-wrapper"
+    role="dialog"
+    @click.self="modalsStore.closeAllModals()"
+  >
+    <LazyModalFormOrderAbonement
+      v-if="activeModals.has('orderAbonement')"
+      key="orderAbonement"
+    />
+    <!-- <LazyModalFeedback v-if="activeModals.has('feedback')" key="feedback" />
+       
       <LazyMenuComponent v-if="activeModals.has('menu')" key="menu" /> -->
-    </div>
+  </div>
 </template>
 <style lang="scss" scoped>
 .modal-wrapper {
