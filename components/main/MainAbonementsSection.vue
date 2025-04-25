@@ -88,6 +88,13 @@ const priceAbon = (rub: number) => {
 
 .main-abonements-section {
   padding-block: 100px;
+  padding-inline: 10px;
+  @include mediaMobile {
+    padding-inline: 20px;
+  }
+  @include mediaTablet {
+    padding-inline: 0px;
+  }
   &__wraper-list {
     display: grid;
     grid-template-columns: 1fr;

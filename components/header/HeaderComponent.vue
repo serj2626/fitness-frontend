@@ -35,7 +35,8 @@ onUnmounted(() => {
   >
     <nav class="header-component__wraper container">
       <NuxtLink class="header-component__wraper-logo" to="/">
-        DV <span class="header-component__wraper-logo-text">Fitness</span>
+        <span class="header-component__wraper-logo-title">DV</span>
+        <span class="header-component__wraper-logo-text">Fitness</span>
         <BaseDot />
       </NuxtLink>
       <ul class="header-component__wraper-list">
@@ -63,7 +64,7 @@ onUnmounted(() => {
         label="Купить абонемент"
         @click="modalsStore.openModal('orderAbonement')"
       />
-      <button class="header-component__wraper-burger">
+      <button class="header-component__wraper-burger" @click="modalsStore.openModal('menu')">
         <Icon
           class="header-component__wraper-burger-icon"
           :name="HeroIcons.BURGER_MENU"
@@ -130,6 +131,10 @@ onUnmounted(() => {
       color: #fff;
       font-size: 24px;
       font-weight: 600;
+      &-title{
+        text-shadow: 0 0 14px #ffc451;
+        margin-right: 5px;
+      }
       &-text {
         font-size: 15px;
         text-transform: lowercase;

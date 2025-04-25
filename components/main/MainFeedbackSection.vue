@@ -77,13 +77,21 @@
     &-content {
       margin-top: 120px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       gap: 50px;
+      @include mediaTablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       &-info {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 20px;
+
+        @include mediaTablet{
+          align-items: start;
+        }
         &-tel {
           color: $accent;
           opacity: 0.8;
@@ -97,8 +105,9 @@
         flex-direction: column;
         &-input {
           display: flex;
-          gap: 20px;
+          // gap: 20px;
           margin-bottom: 50px;
+          justify-content: space-between;
           &-name {
             border-radius: 10px;
             padding: 20px;

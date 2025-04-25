@@ -37,14 +37,12 @@ const submitForm = () => {
 
 <style scoped lang="scss">
 .modal-form-buy-abonement {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 16px;
-  background-color: #f5f5f5;
-
   .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
     background: #fff;
     padding: 24px;
     border-radius: 12px;

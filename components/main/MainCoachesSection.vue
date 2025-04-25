@@ -6,7 +6,7 @@ import "swiper/css";
 <template>
   <section id="main-coaches-section" class="main-coaches-section">
     <div class="main-coaches-section__wraper">
-      <BaseSwiper :desctop-count="5" :auto-delay="2000">
+      <BaseSwiper :desctop-count="5" :mobile-count="2" :auto-delay="4000">
         <swiper-slide v-for="(slide, idx) in coaches" :key="idx" class="slide">
           <p class="slide__title">{{ slide.name }}</p>
           <button class="slide__btn">

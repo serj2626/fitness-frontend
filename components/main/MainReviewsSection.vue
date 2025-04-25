@@ -3,7 +3,7 @@ import { reviews } from "~/assets/data/moke.data";
 </script>
 <template>
   <section id="main-reviews-section" class="main-reviews-section">
-    <BaseSwiper>
+    <BaseSwiper :auto-delay="5000">
       <swiper-slide v-for="(review, idx) in reviews" :key="idx" class="slide">
         <ReviewComponent :review />
       </swiper-slide>

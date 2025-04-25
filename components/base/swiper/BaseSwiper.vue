@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const {
+  defaultCount = 1,
+  defaultBetween = 20,
   mobileCount = 1,
   mobileBetween = 20,
   tabletCount = 3,
@@ -11,6 +13,8 @@ const {
   autoDelay = 1500,
   loop = true,
 } = defineProps<{
+  defaultCount?: number;
+  defaultBetween?: number;
   mobileCount?: number;
   mobileBetween?: number;
   tabletCount?: number;
@@ -46,6 +50,10 @@ const swiper = useSwiper(containerRef, {
   },
   breakpoints: {
     0: {
+      slidesPerView: defaultCount,
+      spaceBetween: defaultBetween,
+    },
+    375: {
       slidesPerView: mobileCount,
       spaceBetween: mobileBetween,
     },
