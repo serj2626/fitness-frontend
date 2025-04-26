@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { HeroIcons } from "~/assets/icons/types/hero-icons";
+
 // const modalStore = useModalsStore();
 const text = ref("Начни сейчас и никогда не останавливайся.".split(""));
 </script>
@@ -15,12 +17,20 @@ const text = ref("Начни сейчас и никогда не останав�
           {{ letter === " " ? "\u00A0" : letter }}
         </span>
       </h1>
-      <!-- <BaseButton
-        size="lg"
-        label="Оставить заявку"
-        class="main-first-section__btn"
-        @click="modalStore.openModal('feedback')"
-      /> -->
+      <a class="main-first-section__wraper-arrow" href="#main-abonements-section" >
+        <Icon
+          class="main-first-section__wraper-arrow-icon"
+          :name="HeroIcons.DOWN"
+        />
+        <Icon
+          class="main-first-section__wraper-arrow-icon"
+          :name="HeroIcons.DOWN"
+        />
+        <Icon
+          class="main-first-section__wraper-arrow-icon"
+          :name="HeroIcons.DOWN"
+        />
+      </a>
     </div>
   </section>
 </template>
@@ -39,13 +49,23 @@ const text = ref("Начни сейчас и никогда не останав�
 
   &__wraper {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
+    &-arrow {
+      display: flex;
+      flex-direction: column;
+      color: $accent;
+
+      &-icon {
+        font-size: 48px;
+      }
+    }
 
     &-title {
       font-weight: 400;
@@ -73,6 +93,30 @@ const text = ref("Начни сейчас и никогда не останав�
   to {
     opacity: 1;
     scale: 1;
+  }
+}
+.main-first-section__wraper-arrow-icon:nth-child(1) {
+  animation: arrow_wave 2s ease-in-out 0s infinite;
+}
+.main-first-section__wraper-arrow-icon:nth-child(2) {
+  animation: arrow_wave 2s ease-in-out 0.4s infinite;
+}
+.main-first-section__wraper-arrow-icon:nth-child(3) {
+  animation: arrow_wave 2s ease-in-out 0.8s infinite;
+}
+
+@keyframes arrow_wave {
+  0% {
+    opacity: 0;
+    transform: translateY(0px) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0px) scale(0.5);
   }
 }
 </style>

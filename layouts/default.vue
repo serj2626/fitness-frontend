@@ -5,12 +5,11 @@
     <FooterComponent />
     <BaseButtonScrollToTop />
     <ModalComponent />
-    <BaseButtonScrollToTop />
+    <LazyBaseAlertBaseAlerCookie />
   </div>
 </template>
 <style lang="scss">
-
-.app{
+.app {
   // display: flex;
   // flex-direction: column;
   // min-height: 100vh;

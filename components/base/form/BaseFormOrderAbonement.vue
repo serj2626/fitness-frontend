@@ -6,7 +6,7 @@ const submitForm = () => {
 </script>
 
 <template>
-  <div class="modal-form-buy-abonement">
+  <ModalBase>
     <form @submit.prevent="submitForm" class="form">
       <h2 class="form__title">Купить абонемент</h2>
 
@@ -32,7 +32,7 @@ const submitForm = () => {
 
       <button type="submit" class="form__button">Оформить</button>
     </form>
-  </div>
+  </ModalBase>
 </template>
 
 <style scoped lang="scss">
@@ -42,7 +42,7 @@ const submitForm = () => {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
     background: #fff;
     padding: 24px;
     border-radius: 12px;

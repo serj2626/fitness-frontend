@@ -9,14 +9,14 @@ const { activeModals, isAnyModalOpen } = storeToRefs(modalsStore);
     role="dialog"
     @click.self="modalsStore.closeAllModals()"
   >
-    <LazyModalFormOrderAbonement
+    <LazyBaseFormOrderAbonement
       v-if="activeModals.has('orderAbonement')"
       key="orderAbonement"
     />
-    <LazyHeaderCatalogMunu
+    <!-- <LazyHeaderCatalogMunu
       v-if="activeModals.has('menu')"
       key="orderAbonement"
-    />
+    /> -->
   </div>
 </template>
 <style lang="scss" scoped>
