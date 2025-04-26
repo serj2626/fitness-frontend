@@ -1,42 +1,50 @@
 <script lang="ts" setup>
 import { HeroIcons } from "~/assets/icons/types/hero-icons";
 const modalsStore = useModalsStore();
+
+
+onMounted(()=>{
+  document.documentElement.style.overflowY = "hidden"
+})
+onUnmounted(()=>{
+  document.documentElement.style.overflowY = "auto"
+})
 </script>
 <template>
   <div class="header-catalog-menu">
-    <header class="header-catalog-menu__wraper container">
-      <NuxtLink class="header-catalog-menu__wraper-logo" to="/">
-        <span class="header-catalog-menu__wraper-logo-title">DV</span>
-        <span class="header-catalog-menu__wraper-logo-text">Fitness</span>
+    <header class="header-catalog-menu__top container">
+      <NuxtLink class="header-catalog-menu__top-logo" to="/">
+        <span class="header-catalog-menu__top-logo-title">DV</span>
+        <span class="header-catalog-menu__top-logo-text">Fitness</span>
         <BaseDot />
       </NuxtLink>
       <button
-        class="header-catalog-menu__wraper-burger"
+        class="header-catalog-menu__top-burger"
         @click="modalsStore.closeModal('menu')"
       >
         <Icon
-          class="header-catalog-menu__wraper-burger-icon"
+          class="header-catalog-menu__top-burger-icon"
           :name="HeroIcons.CLOSE"
         />
       </button>
     </header>
-    <nav class="header-catalog-menu__wraper-list container">
-      <NuxtLink class="header-catalog-menu__wraper-list-item" to="/">
+    <nav class="header-catalog-menu__list container">
+      <NuxtLink class="header-catalog-menu__list-item" to="/">
         О клубе
       </NuxtLink>
-      <NuxtLink class="header-catalog-menu__wraper-list-item" to="/">
+      <NuxtLink class="header-catalog-menu__list-item" to="/">
         Абонементы
       </NuxtLink>
-      <NuxtLink class="header-catalog-menu__wraper-list-item" to="/">
+      <NuxtLink class="header-catalog-menu__list-item" to="/">
         Тренеры
       </NuxtLink>
-      <NuxtLink class="header-catalog-menu__wraper-list-item" to="/">
+      <NuxtLink class="header-catalog-menu__list-item" to="/">
         Контакты
       </NuxtLink>
-      <NuxtLink class="header-catalog-menu__wraper-list-item" to="/">
+      <NuxtLink class="header-catalog-menu__list-item" to="/">
         Мой профиль
       </NuxtLink>
-      <NuxtLink class="header-catalog-menu__wraper-list-item" to="/">
+      <NuxtLink class="header-catalog-menu__list-item" to="/">
         Войти
       </NuxtLink>
     </nav>
@@ -49,49 +57,24 @@ const modalsStore = useModalsStore();
 </template>
 <style lang="scss">
 .header-catalog-menu {
-  display: block;
   position: fixed;
   width: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: 101;
   transition: all 0.5s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0);
   padding-block: 10px;
   overflow: hidden;
-  @include medialaptop {
-    display: none;
-  }
 
-  &__wraper {
+  &__top {
     padding-inline: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    &-list {
-      display: none;
-      align-items: center;
-      gap: 15px;
-      @include mediaLaptop {
-        display: flex;
-      }
-      @include mediaDesktop {
-        gap: 30px;
-      }
-      &-item {
-        font-size: 15px;
-        color: $header_link;
-        padding-block: 18px;
-        transition: color 0.3s ease-in-out;
-        @include mediaDesktop {
-          font-size: 16px;
-        }
-        &:hover {
-          color: $accent;
-        }
-      }
-    }
+  
     &-logo {
       color: #fff;
       font-size: 24px;
