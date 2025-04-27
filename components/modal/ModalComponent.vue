@@ -17,10 +17,10 @@ const { activeModals, isAnyModalOpen } = storeToRefs(modalsStore);
       v-if="activeModals.has('login')"
       key="login"
     />
-    <!-- <LazyHeaderCatalogMunu
+    <LazyHeaderCatalogMunu
       v-if="activeModals.has('menu')"
       key="orderAbonement"
-    /> -->
+    />
   </div>
 </template>
 <style lang="scss" scoped>
