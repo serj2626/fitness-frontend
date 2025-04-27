@@ -17,7 +17,7 @@ function hideAlert() {
       DV Fitness использует файлы cookie для улучшения взаимодействия с сайтом.
       Продолжая просмотр страниц сайта, вы соглашаетесь с использованием файлов
       cookie.
-      <NuxtLink to="/cookies" class="alert-cookie__text-link">
+      <NuxtLink to="/" class="alert-cookie__text-link">
         Подробнее
       </NuxtLink>
     </p>

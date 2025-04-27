@@ -18,6 +18,14 @@ export default defineNuxtConfig({
     strictMode: true,
     lang: "ru_RU",
   },
+  icon: {
+    customCollections: [
+      {
+        prefix: 'icon',
+        dir: './assets/icons'
+      },
+    ],
+  },
   app: {
     head: {
       title: "Фитнес-клуб DV Fitness",

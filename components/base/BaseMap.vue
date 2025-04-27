@@ -1,5 +1,4 @@
 <script setup>
-import { HeroIcons } from "~/assets/icons/types/hero-icons";
 import {
   YandexMap,
   YandexMapControls,
@@ -29,56 +28,67 @@ defineProps({
   },
   mapWidth: {
     type: String,
-    default: "30.3141",
+    default: "59.9325",
   },
   mapLongitude: {
     type: String,
-    default: "59.9386",
+    default: "30.3143",
   },
 });
 </script>
+
 <template>
   <section v-if="mapLongitude && mapWidth" class="base-map">
-    <YandexMap
-      v-model="map"
-      :settings="{
-        coordorder: 'latlong',
-        location: {
-          center: [parseFloat(mapLongitude), parseFloat(mapWidth)],
-          zoom: 15,
-        },
-        showScaleInCopyrights: true,
-        behaviors: ['drag', 'dblClick'],
-      }"
-      width="100%"
-      height="100%"
-      class="base-map__map"
-    >
-      <YandexMapDefaultSchemeLayer />
-      <YandexMapDefaultFeaturesLayer>
-        <yandex-map-controls :settings="{ position: 'right' }">
-          <yandex-map-zoom-control />
-        </yandex-map-controls>
-        <YandexMapMarker
-          :settings="{
-            coordinates: [parseFloat(mapLongitude), parseFloat(mapWidth)],
-          }"
-          position="translate(-36%, -72%)"
-        >
-          <div class="base-map__map__marker">
-            <Icon :name="HeroIcons.MARKER" class="base-map__map-marker-icon" />
-          </div>
-        </YandexMapMarker>
-      </YandexMapDefaultFeaturesLayer>
-    </YandexMap>
+    <ClientOnly>
+      <YandexMap
+        v-model="map"
+        :settings="{
+          coordorder: 'latlong',
+          location: {
+            center: [parseFloat(mapLongitude), parseFloat(mapWidth)],
+            zoom: 15,
+          },
+          showScaleInCopyrights: true,
+          behaviors: ['drag', 'dblClick', 'scrollZoom'],
+          type: 'yandex#hybrid', // Используем темную тему
+        }"
+        width="100%"
+        height="100%"
+        class="base-map__map"
+      >
+        <YandexMapDefaultSchemeLayer />
+        <YandexMapDefaultFeaturesLayer>
+          <yandex-map-controls :settings="{ position: 'right' }">
+            <yandex-map-zoom-control />
+          </yandex-map-controls>
+          <YandexMapMarker
+            :settings="{
+              coordinates: [parseFloat(mapLongitude), parseFloat(mapWidth)],
+            }"
+            position="translate(-36%, -72%)"
+          >
+            <div class="base-map__map-marker">
+              <Icon name="icon:marker" class="base-map__map-marker-icon" />
+            </div>
+          </YandexMapMarker>
+        </YandexMapDefaultFeaturesLayer>
+      </YandexMap>
+    </ClientOnly>
   </section>
 </template>
 
 <style lang="scss" scoped>
+.__ymap_container {
+  height: 100%;
+  background-color: #292626;
+}
+
+
 .base-map {
   position: relative;
   width: 100%;
   height: v-bind(mobHeight);
+  background-color: black; // Устанавливаем черный фон для карты
 
   @include mediaTablet {
     height: v-bind(tabHeight);
@@ -93,18 +103,21 @@ defineProps({
   }
 
   &__map {
-    border-radius: 20px;
+    // Убираем скругления углов карты
+    border-radius: 0 !important;
     overflow: hidden;
 
-    &__marker {
+    &-marker {
       width: 50px;
       height: 50px;
+      color: red;
+      font-size: 54px;
     }
   }
 }
 
 .base-map__map {
-  border-radius: 20px;
+  border-radius: 0 !important; // Убираем скругления
   overflow: hidden;
 }
 </style>
