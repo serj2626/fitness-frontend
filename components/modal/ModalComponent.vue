@@ -17,7 +17,7 @@ const { activeModals, isAnyModalOpen } = storeToRefs(modalsStore);
       v-if="activeModals.has('login')"
       key="login"
     />
-    <LazyHeaderCatalogMunu
+    <LazyHeaderCatalogMenu
       v-if="activeModals.has('menu')"
       key="orderAbonement"
     />

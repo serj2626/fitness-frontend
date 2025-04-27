@@ -1,15 +1,15 @@
 <script setup lang="ts"></script>
 <template>
-  <button class="btn">
-    <span class="btn__line-one"></span>
-    <span class="btn__line-two"></span>
+  <button class="base-button-burger">
+    <span class="base-button-burger__line-one"></span>
+    <span class="base-button-burger__line-two"></span>
   </button>
 </template>
 <style scoped lang="scss">
-.btn {
-  position: absolute;
-  top: 40px;
-  right: 60px;
+.base-button-burger {
+  // position: absolute;
+  // top: 40px;
+  // right: 60px;
   cursor: pointer;
 
   & span {
@@ -24,13 +24,13 @@
   }
 }
 
-.btn:hover {
-  .btn__line-one {
+.base-button-burger:hover {
+  .base-button-burger__line-one {
     // rotate: -45deg;
     opacity: 1;
     transform: translateY(4px) rotate(-45deg);
   }
-  .btn__line-two {
+  .base-button-burger__line-two {
     // rotate: 45deg;
     opacity: 1;
     transform: translateY(-4px) rotate(45deg);
