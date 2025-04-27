@@ -81,7 +81,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 50px;
-      @include mediaTablet {
+      @include mediaCustom(1100px) {
         grid-template-columns: repeat(2, 1fr);
       }
 

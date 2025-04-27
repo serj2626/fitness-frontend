@@ -11,6 +11,9 @@
   // top: 40px;
   // right: 60px;
   cursor: pointer;
+  @include mediaLaptop{
+    display: none;
+  }
 
   & span {
     display: block;

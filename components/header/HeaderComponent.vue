@@ -68,7 +68,7 @@ onUnmounted(() => {
         label="Купить абонемент"
         @click="modalsStore.openModal('orderAbonement')"
       />
-      <button
+      <!-- <button
         class="header-component__wraper-burger"
         @click="modalsStore.openModal('menu')"
       >
@@ -76,7 +76,8 @@ onUnmounted(() => {
           class="header-component__wraper-burger-icon"
           :name="HeroIcons.BURGER_MENU"
         />
-      </button>
+      </button> -->
+      <BaseButtonBurger @click="modalsStore.openModal('menu')" />
     </nav>
   </header>
 </template>
