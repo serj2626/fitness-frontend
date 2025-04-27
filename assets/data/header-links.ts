@@ -1,22 +1,22 @@
-export const menuLinks = ref<{ name: string; link: string }[]>([
+export const headerLinks = ref<{ name: string; link: string }[]>([
   {
-    name: "Главная",
+    name: "О клубе",
     link: "/",
   },
   {
-    name: "Проекты",
-    link: "/projects",
+    name: "Абонементы",
+    link: "/",
   },
   {
-    name: "Услуги",
-    link: "/services",
-  },
-  {
-    name: "Обо мне",
-    link: "/about",
+    name: "Тренеры",
+    link: "/",
   },
   {
     name: "Контакты",
     link: "/contacts",
+  },
+  {
+    name: "Мой профиль",
+    link: "/",
   },
 ]);

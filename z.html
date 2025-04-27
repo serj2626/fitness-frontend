@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Тест Яндекс Карт</title>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=07aa2826-2a9c-49cf-8659-f4dc37e25365&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  <div id="map" style="width: 600px; height: 400px"></div>
+
+  <script type="text/javascript">
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map('map', {
+        center: [55.76, 37.64],
+        zoom: 10
+      });
+    });
+  </script>
+</body>
+</html>

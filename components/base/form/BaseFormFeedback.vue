@@ -2,48 +2,48 @@
 
 </script>
 <template>
-  <section id="main-feedback-section" class="main-feedback-section">
-    <div class="main-feedback-section__wraper container">
-      <h4 class="main-feedback-section__wraper-title">Оставьте заявку</h4>
-      <p class="main-feedback-section__wraper-text">
+  <section id="base-form-feedback" class="base-form-feedback">
+    <div class="base-form-feedback__wraper container">
+      <h4 class="base-form-feedback__wraper-title">Оставьте заявку</h4>
+      <p class="base-form-feedback__wraper-text">
         И получите выгодное предложение <BaseDot />
       </p>
-      <div class="main-feedback-section__wraper-content">
-        <div class="main-feedback-section__wraper-content-info">
-          <a class="main-feedback-section__wraper-content-info-tel"
+      <div class="base-form-feedback__wraper-content">
+        <div class="base-form-feedback__wraper-content-info">
+          <a class="base-form-feedback__wraper-content-info-tel"
             >8-999-999-99-99
           </a>
-          <p class="main-feedback-section__wraper-content-info-adress">
+          <p class="base-form-feedback__wraper-content-info-adress">
             СПБ, улица Будапештская дом 89
           </p>
         </div>
-        <form class="main-feedback-section__wraper-content-form">
-          <div class="main-feedback-section__wraper-content-form-input">
+        <form class="base-form-feedback__wraper-content-form">
+          <div class="base-form-feedback__wraper-content-form-input">
             <BaseInput
               type="text"
               placeholder="Ваше имя"
-              class="main-feedback-section__wraper-content-form-input-phone"
+              class="base-form-feedback__wraper-content-form-input-phone"
             />
             <BaseInput
               type="tel"
               placeholder="+7 ( ___ ) ___ - __ - __"
-              class="main-feedback-section__wraper-content-form-input-phone"
+              class="base-form-feedback__wraper-content-form-input-phone"
             />
           </div>
-          <label class="main-feedback-section__wraper-content-form-check">
+          <label class="base-form-feedback__wraper-content-form-check">
             <input
               type="checkbox"
-              class="main-feedback-section__wraper-content-form-check-input"
+              class="base-form-feedback__wraper-content-form-check-input"
             />
-            <p class="main-feedback-section__wraper-content-form-check-text">
+            <p class="base-form-feedback__wraper-content-form-check-text">
               Согласен на
               <NuxtLink
-                class="main-feedback-section__wraper-content-form-check-text-link"
+                class="base-form-feedback__wraper-content-form-check-text-link"
                 >обработку своих персональных данных</NuxtLink
               >
             </p>
           </label>
-          <button class="main-feedback-section__wraper-content-form-btn">
+          <button class="base-form-feedback__wraper-content-form-btn">
             Отправить заявку
           </button>
         </form>
@@ -53,7 +53,7 @@
 </template>
 
 <style lang="scss" scoped>
-.main-feedback-section {
+.base-form-feedback {
   padding-block: 100px;
 
   &__wraper {

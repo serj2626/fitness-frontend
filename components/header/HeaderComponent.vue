@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { HeroIcons } from "~/assets/icons/types/hero-icons";
+import { headerLinks } from "~/assets/data/header-links";
 const modalsStore = useModalsStore();
 
 const isHidden = ref(false);
@@ -40,20 +40,13 @@ onUnmounted(() => {
         <BaseDot />
       </NuxtLink>
       <ul class="header-component__wraper-list">
-        <NuxtLink class="header-component__wraper-list-item" to="/">
-          О клубе
-        </NuxtLink>
-        <NuxtLink class="header-component__wraper-list-item" to="/">
-          Абонементы
-        </NuxtLink>
-        <NuxtLink class="header-component__wraper-list-item" to="/">
-          Тренеры
-        </NuxtLink>
-        <NuxtLink class="header-component__wraper-list-item" to="/">
-          Контакты
-        </NuxtLink>
-        <NuxtLink class="header-component__wraper-list-item" to="/">
-          Мой профиль
+        <NuxtLink
+          v-for="item in headerLinks"
+          :key="item.name"
+          class="header-component__wraper-list-item"
+          :to="item.link"
+        >
+          {{ item.name }}
         </NuxtLink>
         <a
           class="header-component__wraper-list-item"
@@ -68,15 +61,6 @@ onUnmounted(() => {
         label="Купить абонемент"
         @click="modalsStore.openModal('orderAbonement')"
       />
-      <!-- <button
-        class="header-component__wraper-burger"
-        @click="modalsStore.openModal('menu')"
-      >
-        <Icon
-          class="header-component__wraper-burger-icon"
-          :name="HeroIcons.BURGER_MENU"
-        />
-      </button> -->
       <BaseButtonBurger @click="modalsStore.openModal('menu')" />
     </nav>
   </header>

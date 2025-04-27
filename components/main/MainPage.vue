@@ -7,6 +7,6 @@
     <MainPoolSection />
     <MainCoachesSection />
     <MainReviewsSection />
-    <MainFeedbackSection />
+    <BaseFormFeedback />
   </div>
 </template>

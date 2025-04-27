@@ -10,7 +10,14 @@ export default defineNuxtConfig({
     "nuxt-aos",
     "@pinia/nuxt",
     "nuxt-swiper",
+    "vue-yandex-maps/nuxt",
   ],
+  yandexMaps: {
+    apikey: process.env.YANDEX_MAP_API_KEY,
+    initializeOn: "onComponentMount",
+    strictMode: true,
+    lang: "ru_RU",
+  },
   app: {
     head: {
       title: "Фитнес-клуб DV Fitness",
@@ -69,4 +76,18 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  // runtimeConfig: {
+  //   // The private keys which are only available within server-side
+  //   // apiSecret: "/nuxt", // reassign default nuxt api url
+  //   // ssrApiUrl: process.env.SSR_API_URL,
+  //   // Keys within public, will be also exposed to the client-side
+  //   public: {
+  //     // isDebug: process.env.DEBUG,
+  //     // apiBase: "/nuxt",
+  //     // apiUrl: process.env.API_URL,
+  //     // mediaUrl: process.env.MEDIA_URL,
+  //     yandexCaptchaPublicKey: process.env.YANDEX_CAPTCHA_PUBLIC_KEY,
+  //   },
+  // },
 });
