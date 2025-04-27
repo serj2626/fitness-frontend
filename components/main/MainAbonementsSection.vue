@@ -169,7 +169,7 @@ const priceAbon = (rub: number) => {
           height: 100%;
           background-color: $accent;
           z-index: -1;
-          transition: transform 0.35s;
+          transition: transform 0.7s;
           transition-timing-function: cubic-bezier(0.05, 0.73, 0.48, 0.97);
           transform: scale3d(0, 1, 1);
           transform-origin: 100% 50%;

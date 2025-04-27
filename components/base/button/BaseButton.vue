@@ -1,14 +1,31 @@
 <script lang="ts" setup>
 interface IProps {
   label?: string;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg";
   color?: string;
+  type?: "submit" | "reset" | "button";
+  disabled?: boolean;
 }
 
-const { label = "Button", size = "md", color = "#ffc451" } = defineProps<IProps>();
+const {
+  label = "Button",
+  size = "md",
+  color = "#ffc451",
+  type = "button",
+  disabled = false,
+} = defineProps<IProps>();
 </script>
 <template>
-  <button class="base-button">{{ label }}</button>
+  <button
+    :type="type"
+    class="base-button"
+    :class="{
+      [`base-button_${size}`]: size,
+      [`base-button_disabled`]: disabled,
+    }"
+  >
+    {{ label }}
+  </button>
 </template>
 <style lang="scss">
 .base-button {
@@ -19,8 +36,18 @@ const { label = "Button", size = "md", color = "#ffc451" } = defineProps<IProps>
   border: 2px solid v-bind(color);
   color: $header_link;
 
+  &_sm {
+    padding: 6px 12px;
+  }
+  &_md {
+    padding: 8px 30px;
+  }
+  &_lg {
+    padding: 15px 20px;
+  }
+
   &:hover {
-    background-color: $accent;
+    background-color: v-bind(color);
     color: $txt;
   }
 }

@@ -17,13 +17,14 @@ import { HeroIcons } from "~/assets/icons/types/hero-icons";
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  background: #fff;
-  padding: 10px;
+  
+  background-color: $txt;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 550px;
-  width: 100%;
+  box-shadow: 0 0 20px #fff;
+  z-index: 130;
+  overflow: hidden;
+  // max-width: 550px;
+  // width: 100%;
   &__content {
     position: relative;
     &-close {

@@ -55,16 +55,23 @@ onUnmounted(() => {
         <NuxtLink class="header-component__wraper-list-item" to="/">
           Мой профиль
         </NuxtLink>
-        <NuxtLink class="header-component__wraper-list-item" to="/">
+        <a
+          class="header-component__wraper-list-item"
+          to="/"
+          @click="modalsStore.openModal('login')"
+        >
           Войти
-        </NuxtLink>
+        </a>
       </ul>
       <BaseButton
         class="header-component__wraper-buy"
         label="Купить абонемент"
         @click="modalsStore.openModal('orderAbonement')"
       />
-      <button class="header-component__wraper-burger" @click="modalsStore.openModal('menu')">
+      <button
+        class="header-component__wraper-burger"
+        @click="modalsStore.openModal('menu')"
+      >
         <Icon
           class="header-component__wraper-burger-icon"
           :name="HeroIcons.BURGER_MENU"
@@ -131,7 +138,7 @@ onUnmounted(() => {
       color: #fff;
       font-size: 24px;
       font-weight: 600;
-      &-title{
+      &-title {
         text-shadow: 0 0 14px #ffc451;
         margin-right: 5px;
       }

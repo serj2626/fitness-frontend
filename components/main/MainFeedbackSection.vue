@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+</script>
 <template>
   <section id="main-feedback-section" class="main-feedback-section">
     <div class="main-feedback-section__wraper container">
@@ -17,14 +19,14 @@
         </div>
         <form class="main-feedback-section__wraper-content-form">
           <div class="main-feedback-section__wraper-content-form-input">
-            <input
+            <BaseInput
               type="text"
               placeholder="Ваше имя"
-              class="main-feedback-section__wraper-content-form-input-name"
+              class="main-feedback-section__wraper-content-form-input-phone"
             />
-            <input
+            <BaseInput
               type="tel"
-              placeholder="+7 (___)___-__-__"
+              placeholder="+7 ( ___ ) ___ - __ - __"
               class="main-feedback-section__wraper-content-form-input-phone"
             />
           </div>
@@ -89,7 +91,7 @@
         align-items: center;
         gap: 20px;
 
-        @include mediaTablet{
+        @include mediaTablet {
           align-items: start;
         }
         &-tel {
@@ -105,37 +107,9 @@
         flex-direction: column;
         &-input {
           display: flex;
-          // gap: 20px;
+          gap: 20px;
           margin-bottom: 50px;
           justify-content: space-between;
-          &-name {
-            border-radius: 10px;
-            padding: 20px;
-            color: #fff;
-            background-color: #323232;
-            border: 1px solid #323232;
-            transition: all 0.6s ease-in;
-            &::placeholder {
-              color: $white;
-            }
-            &:focus {
-              border-color: $accent;
-            }
-          }
-          &-phone {
-            border-radius: 10px;
-            padding: 20px;
-            color: #fff;
-            background-color: #323232;
-            border: 1px solid #323232;
-            transition: all 0.6s ease-in;
-            &::placeholder {
-              color: $white;
-            }
-            &:focus {
-              border-color: $accent;
-            }
-          }
         }
         &-check {
           display: flex;

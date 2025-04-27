@@ -107,7 +107,7 @@ const text = ref("Начни сейчас и никогда не останав�
 
 @keyframes arrow_wave {
   0% {
-    opacity: 0;
+    opacity: 0.2;
     transform: translateY(0px) scale(0.5);
   }
   50% {
