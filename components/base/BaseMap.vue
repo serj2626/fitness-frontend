@@ -28,11 +28,11 @@ defineProps({
   },
   mapWidth: {
     type: String,
-    default: "59.9325",
+    default: "59.844032",
   },
   mapLongitude: {
     type: String,
-    default: "30.3143",
+    default: "30.392647",
   },
 });
 </script>
@@ -50,11 +50,12 @@ defineProps({
           },
           showScaleInCopyrights: true,
           behaviors: ['drag', 'dblClick', 'scrollZoom'],
-          type: 'yandex#hybrid', // Используем темную тему
+          theme: 'dark',
+          className: 'base-map__map',
+          // camera: {tilt: 45 * (Math.PI / 180), azimuth: 30 * (Math.PI / 180)}
         }"
         width="100%"
         height="100%"
-        class="base-map__map"
       >
         <YandexMapDefaultSchemeLayer />
         <YandexMapDefaultFeaturesLayer>

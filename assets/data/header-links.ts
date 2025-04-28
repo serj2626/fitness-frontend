@@ -9,7 +9,7 @@ export const headerLinks = ref<{ name: string; link: string }[]>([
   },
   {
     name: "Тренеры",
-    link: "/",
+    link: "/coaches",
   },
   {
     name: "Контакты",

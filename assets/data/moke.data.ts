@@ -38,7 +38,8 @@ export interface IReview {
   };
 }
 
-interface ICoach {
+export interface ICoach {
+  id: number;
   img: string;
   name: string;
   position: string;
@@ -46,91 +47,109 @@ interface ICoach {
 
 export const coaches: ICoach[] = [
   {
+    id: 1,
     img: "/coaches/one.webp",
     name: "Анна Иванова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 2,
     img: "/coaches/second.jpeg",
     name: "Ирина Михайлова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 3,
     img: "/coaches/three.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 4,
     img: "/coaches/four.jpeg",
     name: "Александра Зайцева",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 5,
     img: "/coaches/five.webp",
     name: "Ольга Никитина",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 6,
     img: "/coaches/six.webp",
     name: "Виктория Смирнова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 7,
     img: "/coaches/seven.jpg",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 8,
     img: "/coaches/eight.jpeg",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 9,
     img: "/coaches/nine.jpeg",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 10,
     img: "/coaches/ten.jpg",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 11,
     img: "/coaches/eleven.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 12,
     img: "/coaches/twelve.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 13,
     img: "/coaches/fourteen.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 14,
     img: "/coaches/fiveteen.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 15,
     img: "/coaches/sixteen.jpeg",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 16,
     img: "/coaches/seventeen.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 17,
     img: "/coaches/eighteen.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
   },
   {
+    id: 18,
     img: "/coaches/nineteen.webp",
     name: "Алена Петрова",
     position: "Инструктор тренажерного зала",
