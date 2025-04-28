@@ -1,7 +1,7 @@
 export type ModalItem =
   | "menu"
-  | "reviewDetail"
-  | "reviewForm"
+  | "reviewListCoach"
+  | "reviewCoachForm"
   | "success"
   | "feedback"
   | "register"
@@ -10,7 +10,7 @@ export type ModalItem =
   | "orderTraining";
 
 export const useModalsStore = defineStore("modals-store", () => {
-  const activeModals = ref<Map<ModalItem, any>>(new Map());
+  const activeModals = ref<Map<ModalItem, Record<string, unknown>>>(new Map());
 
   function checkKey(event: KeyboardEvent) {
     if (event.key === "Escape") {

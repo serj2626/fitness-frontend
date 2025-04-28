@@ -70,7 +70,8 @@ const currentType = computed(() => {
       class="base-input__input"
     />
     <span v-if="!inputValue" class="base-input__placeholder">
-      {{ placeholder }}</span>
+      {{ placeholder }}</span
+    >
     <small v-if="error" class="base-input__error">
       {{ error }}
     </small>
@@ -93,7 +94,7 @@ const currentType = computed(() => {
   background-color: #323232;
   border: 1px solid #323232;
   border-radius: 10px;
-  transition: outline 1.5s ease-in;
+  transition: outline 1.1s ease-in;
   padding: 8px 30px;
 
   &_isfocused {

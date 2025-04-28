@@ -1,3 +1,21 @@
+<script setup lang="ts">
+const config = useRuntimeConfig();
+console.log("config", config);
+onMounted(() => {
+  const replainSettings = { id: config.public.yandexMaps.apikey };
+
+  // Сначала задаем настройки
+  window.replainSettings = replainSettings;
+
+  // Теперь подключаем внешний скрипт
+  const script = document.createElement("script");
+  script.src = "https://widget.replain.cc/dist/client.js";
+  script.async = true;
+
+  document.body.appendChild(script);
+});
+</script>
+
 <template>
   <div>
     <NuxtLayout>

@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "vue-yandex-maps/nuxt",
   ],
+  // plugins: [
+  //   "~/plugins/replain.ts",
+  // ],
   yandexMaps: {
     apikey: process.env.YANDEX_MAP_API_KEY,
     initializeOn: "onComponentMount",
@@ -21,8 +24,8 @@ export default defineNuxtConfig({
   icon: {
     customCollections: [
       {
-        prefix: 'icon',
-        dir: './assets/icons'
+        prefix: "icon",
+        dir: "./assets/icons",
       },
     ],
   },

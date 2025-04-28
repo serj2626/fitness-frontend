@@ -5,7 +5,7 @@ defineProps<{
 }>();
 </script>
 <template>
-  <NuxtLink>
+  <NuxtLink :to="`/coaches/${coach.id}`">
     <div class="coaches-card">
       <NuxtImg class="coaches-card__img" :src="coach.img" />
       <p class="coaches-card__name">{{ coach.name }}</p>
@@ -15,7 +15,7 @@ defineProps<{
 <style scoped lang="scss">
 .coaches-card {
   position: relative;
-  height: 400px;
+  height: 500px;
   background-color: #fff;
   border-radius: 20px;
   overflow: hidden;
