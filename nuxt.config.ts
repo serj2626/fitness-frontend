@@ -12,6 +12,12 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "vue-yandex-maps/nuxt",
   ],
+  runtimeConfig: {
+    public: {
+      recaptchaPublicKey: process.env.GOOGLE_CAPTCHA_PUBLIC_KEY,
+    },
+    recaptchaSecretKey: process.env.GOOGLE_CAPTCHA_SECRET_KEY,
+  },
   // plugins: [
   //   "~/plugins/replain.ts",
   // ],
@@ -58,6 +64,13 @@ export default defineNuxtConfig({
           content: "width=device-width, initial-scale=1.0, maximum-scale=5",
         },
         { name: "apple-mobile-web-app-title", content: "pavelpola" },
+      ],
+      script: [
+        {
+          src: "https://www.google.com/recaptcha/api.js",
+          async: true,
+          defer: true,
+        },
       ],
     },
     pageTransition: { name: "page", mode: "out-in" },

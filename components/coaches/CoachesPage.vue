@@ -21,18 +21,18 @@ import { coaches } from "~/assets/data/moke.data";
             </select>
           </div>
           <div class="coaches-page__search-form-actions">
-            <BaseButton class="coaches-page__search-form-actions-submit" size="md" label="Найти" />
+            <BaseButton
+              class="coaches-page__search-form-actions-submit"
+              size="md"
+              label="Найти"
+            />
             <BaseButton size="md" label="Сбросить" />
           </div>
         </form>
       </div>
       <ul class="coaches-page__content-list">
-          <CoachesCard
-            v-for="coach in coaches"
-            :key="coach.id"
-            :coach="coach"
-          />
-        </ul>
+        <CoachesCard v-for="coach in coaches" :key="coach.id" :coach="coach" />
+      </ul>
       <!-- <div class="coaches-page__content">
         <div class="coaches-page__content-search">
           <ul class="coaches-page__content-search-list">
@@ -63,10 +63,13 @@ import { coaches } from "~/assets/data/moke.data";
   padding-block: 100px;
 
   &__search {
-    position: sticky;
+    position: static;
     top: 20px;
     z-index: 90;
 
+    @include mediaLaptop {
+      position: sticky;
+    }
 
     padding: 50px;
     margin-block: 50px 100px;
@@ -163,8 +166,14 @@ import { coaches } from "~/assets/data/moke.data";
 
     &-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 10px;
+      @include mediaTablet{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include mediaLaptop{
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 }

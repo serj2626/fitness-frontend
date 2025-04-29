@@ -5,19 +5,7 @@ const modalsStore = useModalsStore();
   <div class="coaches-detail-page">
     <div class="container">
       <div class="coaches-detail-page__content">
-        <div class="coaches-detail-page__content-info">
-          <!-- <Icon name="icon:star" size="30" /> -->
-          <NuxtImg
-            class="coaches-detail-page__content-info-img"
-            src="/coaches/five.webp"
-          />
-          <RatingComponent :rating="4.5" :count="5" />
-          <BaseButton
-            size="lg"
-            label="Записаться"
-            class="coaches-detail-page__content-info-button"
-          />
-        </div>
+        <CoachesDetailProfile />
         <div class="coaches-detail-page__content-main">
           <div class="coaches-detail-page__content-main-actions">
             <button class="coaches-detail-page__content-main-actions-item">
@@ -66,21 +54,6 @@ const modalsStore = useModalsStore();
     gap: 50px;
     padding-block: 50px;
 
-    &-info {
-      // position: sticky;
-      // top: 100px;
-      // z-index: 10; /* чтобы блок не перекрывался другими элементами */
-
-      &-img {
-        border-radius: 15px;
-        margin-bottom: 30px;
-      }
-      &-button {
-        display: block;
-        width: 100%;
-        margin-top: 20px;
-      }
-    }
     &-main {
       display: flex;
       flex-direction: column;

@@ -6,8 +6,8 @@
         <span>© 2025 Все права защищены</span>
       </div>
       <div class="footer-component__content-links">
-        <span>Политика конфиденциальности</span>
-        <span>Пользовательское соглашение</span>
+        <NuxtLink class="footer-component__content-links-policy" to="/policy">Политика конфиденциальности</NuxtLink>
+        <NuxtLink>Пользовательское соглашение</NuxtLink>
       </div>
     </div>
     <div class="footer-component__social">
@@ -55,6 +55,9 @@
       font-weight: 500;
       opacity: 0.8;
       cursor: pointer;
+      &-policy{
+        color: $white;
+      }
       & span {
         transition: all 0.3s ease-in;
         &:hover {
