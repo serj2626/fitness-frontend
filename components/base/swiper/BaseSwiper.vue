@@ -30,6 +30,7 @@ const {
 
 const containerRef = ref(null);
 const swiper = useSwiper(containerRef, {
+  parallax: true,
   loop,
   ...(autoDelay > 0 && {
     autoplay: {

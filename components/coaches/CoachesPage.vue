@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 import { coaches } from "~/assets/data/moke.data";
-// import { HeroIcons } from "~/assets/icons/types/hero-icons";
 </script>
 
 <template>
   <div class="coaches-page">
     <div class="container">
-      <!-- <h1 class="coaches-page__title">Наши тренеры</h1> -->
       <div class="coaches-page__search">
         <p class="coaches-page__search-title">Найти своего тренера</p>
         <form class="coaches-page__search-form">
@@ -33,27 +31,6 @@ import { coaches } from "~/assets/data/moke.data";
       <ul class="coaches-page__content-list">
         <CoachesCard v-for="coach in coaches" :key="coach.id" :coach="coach" />
       </ul>
-      <!-- <div class="coaches-page__content">
-        <div class="coaches-page__content-search">
-          <ul class="coaches-page__content-search-list">
-            <li>Фитнес тренер</li>
-            <li>Инструктор по йоге</li>
-            <li>Инструктор по плаванию</li>
-            <li>Тренер по боксу</li>
-          </ul>
-          <button class="coaches-page__content-search-close">
-            Сбросить <Icon :name="HeroIcons.CLOSE" size="22" />
-          </button>
-        </div>
-
-        <ul class="coaches-page__content-list">
-          <CoachesCard
-            v-for="coach in coaches"
-            :key="coach.id"
-            :coach="coach"
-          />
-        </ul>
-      </div> -->
     </div>
   </div>
 </template>

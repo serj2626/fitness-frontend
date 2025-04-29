@@ -1,6 +1,6 @@
 <script lang="ts" setup></script>
 <template>
-  <div class="coaches-detail-profile">
+  <div class="coaches-detail-profile" v-bind="$attrs">
     <NuxtImg class="coaches-detail-profile__img" src="/coaches/five.webp" />
     <RatingComponent
       class="coaches-detail-profile__rating"

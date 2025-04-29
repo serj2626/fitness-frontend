@@ -1,11 +1,25 @@
 <script lang="ts" setup>
+import { coaches } from "~/assets/data/moke.data";
 const modalsStore = useModalsStore();
+
+const isOpen = ref(false);
+const startIndex = ref(0);
+
+const openViewer = (index: number) => {
+  startIndex.value = index;
+  isOpen.value = true;
+};
+
+const images = computed(() => {
+  const listImages = coaches.slice(0, 8).map((item) => item.img);
+  return listImages;
+});
 </script>
 <template>
   <div class="coaches-detail-page">
     <div class="container">
       <div class="coaches-detail-page__content">
-        <CoachesDetailProfile />
+        <CoachesDetailProfile class="coaches-detail-page__content-profile" />
         <div class="coaches-detail-page__content-main">
           <div class="coaches-detail-page__content-main-actions">
             <button class="coaches-detail-page__content-main-actions-item">
@@ -39,14 +53,29 @@ const modalsStore = useModalsStore();
               <span>8-800-555-35-35</span>
             </div>
           </div>
+          <div class="coaches-detail-page__content-main-images">
+            <NuxtImg
+              v-for="(photo, index) in images"
+              :key="index"
+              :src="photo"
+              class="coaches-detail-page__content-main-images-item"
+              @click="openViewer(index)"
+            />
+          </div>
         </div>
       </div>
+      <CoachesDetailImages
+        v-if="isOpen"
+        :images
+        :start-index
+        @close="isOpen = false"
+      />
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .coaches-detail-page {
-  padding-block: 100px;
+  padding-block: 100px 30px;
 
   &__content {
     display: grid;
@@ -54,14 +83,27 @@ const modalsStore = useModalsStore();
     gap: 50px;
     padding-block: 50px;
 
+    // 🔧 Убедись, что тут нет overflow или ограниченной высоты
+    overflow: visible;
+
+    &-profile {
+      position: sticky;
+      top: 80px;
+
+      // ✅ Для надежности можно добавить:
+      align-self: start;
+    }
+
     &-main {
       display: flex;
       flex-direction: column;
       gap: 20px;
+
       &-actions {
         display: flex;
         justify-content: center;
         gap: 40px;
+
         &-item {
           position: relative;
           border-radius: 5px;
@@ -71,9 +113,11 @@ const modalsStore = useModalsStore();
           font-weight: 500;
           cursor: pointer;
           transition: all 0.3s ease-in;
+
           &:hover {
             color: $accent;
           }
+
           &:before {
             content: "";
             position: absolute;
@@ -83,6 +127,21 @@ const modalsStore = useModalsStore();
             height: 2px;
             background-color: $accent;
           }
+        }
+      }
+
+      &-images {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        &-item {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          border-radius: 20px;
+          box-shadow: 0 0 15px rgba(255, 255, 255, 0.611);
+          cursor: pointer;
         }
       }
     }
