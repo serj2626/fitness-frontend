@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const modalsStore = useModalsStore();
+</script>
 <template>
   <div class="coaches-detail-profile" v-bind="$attrs">
     <NuxtImg class="coaches-detail-profile__img" src="/coaches/five.webp" />
@@ -11,6 +13,7 @@
       size="lg"
       label="Записаться"
       class="coaches-detail-profile__button"
+      @click="modalsStore.openModal('orderAbonement')"
     />
   </div>
 </template>

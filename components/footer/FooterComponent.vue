@@ -57,8 +57,6 @@
       cursor: pointer;
       &-policy{
         color: $white;
-      }
-      & span {
         transition: all 0.3s ease-in;
         &:hover {
           color: $accent;

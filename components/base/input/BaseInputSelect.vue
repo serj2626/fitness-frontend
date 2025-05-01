@@ -75,7 +75,7 @@ function closeHandler() {
 
 <style lang="scss" scoped>
 .base-input-select {
-  @include txt_monrope(14px, 400, 19.6px, $txt_review);
+  // @include txt_monrope(14px, 400, 19.6px, $txt_review);
   position: relative;
   width: 100%;
 
@@ -83,8 +83,8 @@ function closeHandler() {
     border: none;
     border-radius: 5px;
     padding: 14px 16px;
-    background: $txt_hover;
-    color: $txt_review;
+    background: $txt;
+    color: $txt;
     cursor: pointer;
     user-select: none;
 
@@ -111,7 +111,7 @@ function closeHandler() {
   }
 
   &__items {
-    background-color: $txt_hover;
+    background-color: $txt;
     overflow: hidden;
     position: absolute;
     left: 0;
@@ -134,10 +134,10 @@ function closeHandler() {
     padding-left: 20px;
     user-select: none;
     border-bottom: 1px solid #01394323;
-    @include txt_monrope(14px, 400, 19.6px, $txt_review);
+    // @include txt_monrope(14px, 400, 19.6px, $txt_review);
 
     &:hover {
-      background-color: $diamond_white;
+      // background-color: $diamond_white;
     }
   }
   &__error {

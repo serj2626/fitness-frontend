@@ -18,6 +18,7 @@ const images = computed(() => {
 <template>
   <div class="coaches-detail-page">
     <div class="container">
+      <BaseBreadcrumbs class="policy-page__breadcrumbs" current-page="Тренер" />
       <div class="coaches-detail-page__content">
         <CoachesDetailProfile class="coaches-detail-page__content-profile" />
         <div class="coaches-detail-page__content-main">

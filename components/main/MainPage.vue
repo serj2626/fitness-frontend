@@ -32,6 +32,7 @@
 <template>
   <div>
     <MainFirstSection />
+    <MainAboutSection />
     <MainAbonementsSection />
     <MainServicesSection />
     <MainPoolSection />
