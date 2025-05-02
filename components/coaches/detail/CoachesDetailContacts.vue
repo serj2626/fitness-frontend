@@ -36,6 +36,20 @@ import { SocialIcons } from "~/assets/icons/types/social-icons";
           >bs-dev@bk.ru</span
         >
       </li>
+      <li class="coaches-detail-contacts__list-item" style="gap: 20px;">
+        <icon
+          class="coaches-detail-contacts__list-item-icon"
+          :name="SocialIcons.TELEGRAM"
+        />
+        <icon
+          class="coaches-detail-contacts__list-item-icon"
+          :name="SocialIcons.VK"
+        />
+        <icon
+          class="coaches-detail-contacts__list-item-icon"
+          :name="SocialIcons.WHATSAPP"
+        />
+      </li>
     </ul>
     <p class="coaches-detail-contacts__desc">
       ОБРАЗОВАНИЕ: российский государственный университет физической культуры,

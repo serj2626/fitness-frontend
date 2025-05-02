@@ -10,7 +10,7 @@ function closeListReviews() {
 
 function handleAnimationEnd() {
   if (isClosing.value) {
-    modalsStore.closeModal("reviewCoachForm");
+    modalsStore.closeModal("orderAbonement");
   }
 }
 </script>
@@ -22,7 +22,7 @@ function handleAnimationEnd() {
   >
     <div class="base-form-order-abonement__wraper">
       <p style="text-align: center; color: aliceblue; font-size: 26px">
-        Записаться на персональную тренировку.
+        Забронировать абонемент.
       </p>
       <form class="base-form-order-abonement__wraper-form">
         <BaseInput
