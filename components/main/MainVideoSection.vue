@@ -5,7 +5,7 @@ const text = ref("Начни сейчас и никогда не останав�
 <template>
   <section class="main-video-section">
     <video autoplay muted loop playsinline class="main-video-section__video">
-      <source src="/video/sport.mp4" type="video/mp4" />
+      <source src="/video/sport_1.mp4" type="video/mp4" />
       Ваш браузер не поддерживает видео.
     </video>
     <div class="main-video-section__overlay"></div>

@@ -61,7 +61,7 @@ const images = computed(() => {
 </template>
 <style lang="scss" scoped>
 .coaches-detail-page {
-  padding-block: 100px 30px;
+  padding-block: 150px 30px;
 
   &__content {
     display: grid;

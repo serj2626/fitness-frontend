@@ -25,7 +25,7 @@ const onSlideChange = (swiper: any) => {
     />
     <Swiper
       :loop="true"
- :pagination="{ el: '.swiper-pagination', clickable: true }"
+      :pagination="{ el: '.swiper-pagination', clickable: true }"
       :modules="[Mousewheel, Zoom, Pagination]"
       :initial-slide="startIndex"
       :mousewheel="true"
@@ -40,7 +40,8 @@ const onSlideChange = (swiper: any) => {
         </div>
       </SwiperSlide>
     </Swiper>
-    <div class="swiper-pagination" />  </div>
+    <div class="swiper-pagination" />
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -64,8 +65,6 @@ const onSlideChange = (swiper: any) => {
   background: #ff4081;
   opacity: 1;
 }
-
-
 
 // Галерея превьюшек
 .gallery {
