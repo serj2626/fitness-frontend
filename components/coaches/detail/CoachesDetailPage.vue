@@ -37,22 +37,7 @@ const images = computed(() => {
             </button>
           </div>
           <div class="coaches-detail-page__content-main-concats">
-            <div class="coaches-detail-page__content-main-concats-item">
-              <span>Телефон:</span>
-              <span>8-800-555-35-35</span>
-            </div>
-            <div class="coaches-detail-page__content-main-concats-item">
-              <span>Телефон:</span>
-              <span>8-800-555-35-35</span>
-            </div>
-            <div class="coaches-detail-page__content-main-concats-item">
-              <span>Телефон:</span>
-              <span>8-800-555-35-35</span>
-            </div>
-            <div class="coaches-detail-page__content-main-concats-item">
-              <span>Телефон:</span>
-              <span>8-800-555-35-35</span>
-            </div>
+            <CoachesDetailContacts />
           </div>
           <div class="coaches-detail-page__content-main-images">
             <NuxtImg

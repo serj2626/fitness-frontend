@@ -8,4 +8,13 @@ export const enum SocialIcons {
   VK = "fa6-brands:vk",
   GOOGLE = "fa6-brands:google",
   YANDDEX = "fa6-brands:yandex",
+  USER = "fa6-solid:user",
+  WORK = "fa6-solid:building",
 }
+
+// const socialIcons = [
+//   { name: 'ri:telegram-fill' },
+//   { name: 'ri:whatsapp-fill' },
+//   { name: 'ri:vk-fill' },
+//   { name: 'ri:linkedin-fill' },
+// ];

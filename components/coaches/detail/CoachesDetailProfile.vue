@@ -13,7 +13,7 @@ const modalsStore = useModalsStore();
       size="lg"
       label="Записаться"
       class="coaches-detail-profile__button"
-      @click="modalsStore.openModal('orderAbonement')"
+      @click="modalsStore.openModal('orderTraining')"
     />
   </div>
 </template>

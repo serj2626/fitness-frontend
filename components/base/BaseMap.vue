@@ -49,7 +49,7 @@ defineProps({
             zoom: 15,
           },
           showScaleInCopyrights: true,
-          behaviors: ['drag', 'dblClick', 'scrollZoom'],
+          behaviors: ['drag', 'dblClick'],
           theme: 'dark',
           className: 'base-map__map',
           // camera: {tilt: 45 * (Math.PI / 180), azimuth: 30 * (Math.PI / 180)}
@@ -83,7 +83,6 @@ defineProps({
   height: 100%;
   background-color: #292626;
 }
-
 
 .base-map {
   position: relative;
