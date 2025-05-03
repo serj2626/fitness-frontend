@@ -14,11 +14,26 @@ const images = computed(() => {
   const listImages = coaches.slice(0, 8).map((item) => item.img);
   return listImages;
 });
+
+const breadcrumbs = ref([
+  {
+    title: "Главная",
+    url: "/",
+  },
+  {
+    title: "Тренеры",
+    url: "/coaches",
+  },
+  {
+    title: "Тренер",
+    url: "/coaches/1",
+  },
+]);
 </script>
 <template>
   <div class="coaches-detail-page">
     <div class="container">
-      <BaseBreadcrumbs class="policy-page__breadcrumbs" current-page="Тренер" />
+      <BaseBreadCrumbs :breadcrumbs />
       <div class="coaches-detail-page__content">
         <CoachesDetailProfile class="coaches-detail-page__content-profile" />
         <div class="coaches-detail-page__content-main">
@@ -68,8 +83,6 @@ const images = computed(() => {
     grid-template-columns: 1fr 2fr;
     gap: 50px;
     padding-block: 50px;
-
-    // 🔧 Убедись, что тут нет overflow или ограниченной высоты
     overflow: visible;
 
     &-profile {

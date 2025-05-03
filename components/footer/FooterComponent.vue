@@ -6,8 +6,12 @@
         <span>© 2025 Все права защищены</span>
       </div>
       <div class="footer-component__content-links">
-        <NuxtLink class="footer-component__content-links-policy" to="/policy">Политика конфиденциальности</NuxtLink>
-        <NuxtLink>Пользовательское соглашение</NuxtLink>
+        <NuxtLink class="footer-component__content-links-policy" to="/policy">
+          Политика конфиденциальности
+        </NuxtLink>
+        <NuxtLink class="footer-component__content-links-agreement" to="/policy">
+          Пользовательское соглашение
+        </NuxtLink>
       </div>
     </div>
     <div class="footer-component__social">
@@ -35,9 +39,15 @@
   padding-block: 20px;
   border-top: 1px solid #ffc55178;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
   color: $white;
+
+  @include mediaTablet{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__content {
     display: flex;
@@ -50,12 +60,22 @@
     }
     &-links {
       display: flex;
-      gap: 20px;
+      flex-direction: column;
+      gap: 10px;
       font-size: 15px;
       font-weight: 500;
       opacity: 0.8;
       cursor: pointer;
-      &-policy{
+
+      @include mediaCustom(600px){
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
+
+
+
+      &-policy, &-agreement {
         color: $white;
         transition: all 0.3s ease-in;
         &:hover {

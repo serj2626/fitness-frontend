@@ -47,7 +47,7 @@ function closeHandler() {
       <span>
         {{ currentOption.title }}
       </span>
-      <NuxtIcon
+      <Icon
         class="base-input-select__handler-icon"
         :class="{ 'base-input-select__handler-svg_opened': opened }"
         name="arrow-down"
