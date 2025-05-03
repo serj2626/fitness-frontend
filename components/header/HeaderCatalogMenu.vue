@@ -1,5 +1,19 @@
 <script lang="ts" setup>
+import { HeroIcons } from "~/assets/icons/types/hero-icons";
 const modalsStore = useModalsStore();
+
+const isClosing = ref(false);
+
+function closeListReviews() {
+  isClosing.value = true;
+}
+
+function handleAnimationEnd() {
+  if (isClosing.value) {
+    modalsStore.closeModal("menu");
+  }
+}
+
 const menuItems = ref([
   { label: "О клубе", link: "/" },
   { label: "Абонементы", link: "/" },
@@ -16,8 +30,11 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <div class="header-catalog-menu">
-    <div class="container">
+  <div
+    class="header-catalog-menu container"
+    :class="{ 'header-catalog-menu_close': isClosing }"
+    @animationend="handleAnimationEnd"
+  >
       <div class="header-catalog-menu__wraper">
         <div class="header-catalog-menu__wraper-header">
           <NuxtLink class="header-catalog-menu__wraper-header-logo" to="/">
@@ -29,7 +46,15 @@ onUnmounted(() => {
             >
             <BaseDot />
           </NuxtLink>
-          <BaseButtonBurger @click="modalsStore.closeModal('menu')" />
+          <button
+            class="header-component__wraper-burger"
+            @click="closeListReviews"
+          >
+            <Icon
+              class="header-component__wraper-burger-icon"
+              :name="HeroIcons.CLOSE"
+            />
+          </button>
         </div>
         <nav class="header-catalog-menu__wraper-list">
           <a
@@ -55,7 +80,6 @@ onUnmounted(() => {
           class="header-catalog-menu__wraper-button"
         />
       </div>
-    </div>
   </div>
 </template>
 <style lang="scss">
@@ -69,19 +93,24 @@ onUnmounted(() => {
   overflow: hidden;
   z-index: 140;
   transition: all 0.5s ease-in-out;
-  animation: open_menu 0.5s linear;
+  animation: open_menu 0.5s linear forwards;
   @include mediaLaptop {
     display: none;
   }
 
+  &_close {
+    animation: close_menu 0.5s ease-out forwards;
+  }
+
   &__wraper {
     padding-block: 10px;
-    padding-inline: 12px;
+    // padding-inline: 12px;
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    // justify-content: space-between;
     &-header {
       display: flex;
       align-items: center;
@@ -103,11 +132,11 @@ onUnmounted(() => {
       }
     }
     &-list {
-      flex-grow: 1;
+      flex: 1 1 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: start;
+      align-items: center;
       gap: 35px;
       margin-top: 20px;
       padding-inline: 50px;
@@ -160,6 +189,17 @@ onUnmounted(() => {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes close_menu {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
   }
 }
 </style>

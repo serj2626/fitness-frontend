@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { HeroIcons } from "~/assets/icons/types/hero-icons";
 import { headerLinks } from "~/assets/data/header-links";
 const modalsStore = useModalsStore();
 
@@ -61,7 +62,15 @@ onUnmounted(() => {
         label="Купить абонемент"
         @click="modalsStore.openModal('orderAbonement')"
       />
-      <BaseButtonBurger @click="modalsStore.openModal('menu')" />
+      <button
+        class="header-component__wraper-burger"
+        @click="modalsStore.openModal('menu')"
+      >
+        <Icon
+          class="header-component__wraper-burger-icon"
+          :name="HeroIcons.BURGER_MENU"
+        />
+      </button>
     </nav>
   </header>
 </template>
