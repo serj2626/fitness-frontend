@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       recaptchaPublicKey: process.env.GOOGLE_CAPTCHA_PUBLIC_KEY,
+      tawkKey: process.env.TAWK_ID,
     },
     recaptchaSecretKey: process.env.GOOGLE_CAPTCHA_SECRET_KEY,
   },
