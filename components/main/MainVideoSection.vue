@@ -9,7 +9,7 @@ const text = ref("Начни сейчас и никогда не останав�
       Ваш браузер не поддерживает видео.
     </video>
     <div class="main-video-section__overlay"></div>
-    <div class="main-video-section__wraper">
+    <div class="main-video-section__wraper container">
       <h1 class="main-video-section__wraper-title">
         <span
           v-for="(letter, indx) in text"
