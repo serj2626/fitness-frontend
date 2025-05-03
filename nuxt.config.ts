@@ -18,6 +18,9 @@ export default defineNuxtConfig({
     },
     recaptchaSecretKey: process.env.GOOGLE_CAPTCHA_SECRET_KEY,
   },
+  plugins: [
+    '~/plugins/tawk.client.ts'
+  ],
   // plugins: [
   //   "~/plugins/replain.ts",
   // ],

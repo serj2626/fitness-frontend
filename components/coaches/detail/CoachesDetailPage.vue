@@ -76,7 +76,7 @@ const breadcrumbs = ref([
 </template>
 <style lang="scss" scoped>
 .coaches-detail-page {
-  padding-block: 150px 30px;
+  padding-block: 80px 30px;
 
   &__content {
     display: grid;

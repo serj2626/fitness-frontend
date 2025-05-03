@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+import { headerLinks } from "~/assets/data/header-links";
 import { HeroIcons } from "~/assets/icons/types/hero-icons";
-const modalsStore = useModalsStore();
 
+const modalsStore = useModalsStore();
 const isClosing = ref(false);
 
 function closeListReviews() {
@@ -13,14 +14,6 @@ function handleAnimationEnd() {
     modalsStore.closeModal("menu");
   }
 }
-
-const menuItems = ref([
-  { label: "О клубе", link: "/" },
-  { label: "Абонементы", link: "/" },
-  { label: "Тренеры", link: "/" },
-  { label: "Контакты", link: "/" },
-  { label: "Мой профиль", link: "/" },
-]);
 
 onMounted(() => {
   document.documentElement.style.overflowY = "hidden";
@@ -35,51 +28,49 @@ onUnmounted(() => {
     :class="{ 'header-catalog-menu_close': isClosing }"
     @animationend="handleAnimationEnd"
   >
-      <div class="header-catalog-menu__wraper">
-        <div class="header-catalog-menu__wraper-header">
-          <NuxtLink class="header-catalog-menu__wraper-header-logo" to="/">
-            <span class="header-catalog-menu__wraper-header-logo-title"
-              >DV</span
-            >
-            <span class="header-catalog-menu__wraper-header-logo-text"
-              >Fitness</span
-            >
-            <BaseDot />
-          </NuxtLink>
-          <button
-            class="header-component__wraper-burger"
-            @click="closeListReviews"
+    <div class="header-catalog-menu__wraper">
+      <div class="header-catalog-menu__wraper-header">
+        <NuxtLink class="header-catalog-menu__wraper-header-logo" to="/">
+          <span class="header-catalog-menu__wraper-header-logo-title">DV</span>
+          <span class="header-catalog-menu__wraper-header-logo-text"
+            >Fitness</span
           >
-            <Icon
-              class="header-component__wraper-burger-icon"
-              :name="HeroIcons.CLOSE"
-            />
-          </button>
-        </div>
-        <nav class="header-catalog-menu__wraper-list">
-          <a
-            v-for="(item, i) in menuItems"
-            :key="i"
-            class="header-catalog-menu__wraper-list-item"
-          >
-            <span class="header-catalog-menu__wraper-list-item-count">{{
-              i >= 9 ? i + 1 : "0" + (i + 1)
-            }}</span>
-            <span
-              :link="item.link"
-              :name="item.label"
-              class-name="header-catalog-menu__wraper-list-item-link"
-            >
-              {{ item.label }}
-            </span>
-          </a>
-        </nav>
-        <BaseButton
-          size="lg"
-          label="Записаться"
-          class="header-catalog-menu__wraper-button"
-        />
+          <BaseDot />
+        </NuxtLink>
+        <button
+          class="header-catalog-menu__wraper-header-burger"
+          @click="closeListReviews"
+        >
+          <Icon
+            class="header-catalog-menu__wraper-header-burger-icon"
+            :name="HeroIcons.CLOSE"
+          />
+        </button>
       </div>
+      <nav class="header-catalog-menu__wraper-list">
+        <a
+          v-for="(item, i) in headerLinks"
+          :key="i"
+          class="header-catalog-menu__wraper-list-item"
+        >
+          <span class="header-catalog-menu__wraper-list-item-count">{{
+            i >= 9 ? i + 1 : "0" + (i + 1)
+          }}</span>
+          <span
+            :link="item.link"
+            :name="item.name"
+            class-name="header-catalog-menu__wraper-list-item-link"
+          >
+            {{ item.name }}
+          </span>
+        </a>
+      </nav>
+      <BaseButton
+        size="lg"
+        label="Записаться"
+        class="header-catalog-menu__wraper-button"
+      />
+    </div>
   </div>
 </template>
 <style lang="scss">
@@ -128,6 +119,25 @@ onUnmounted(() => {
           text-transform: lowercase;
           font-weight: 500;
           opacity: 0.8;
+        }
+      }
+      &-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &-icon {
+          font-size: 36px;
+          color: $accent;
+          transition: all 0.2s ease-in;
+          &:active {
+            scale: 0.91;
+          }
+          @include mediaTablet {
+            font-size: 40px;
+          }
+          @include mediaLaptop {
+            display: none;
+          }
         }
       }
     }
