@@ -29,8 +29,8 @@ onUnmounted(() => {
 <style scoped lang="scss">
 .scroll-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 130px;
+  right: 35px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -45,11 +45,6 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   z-index: 999;
   animation: scaleBtn 0.5s linear;
-
-  @include mediaLaptop {
-    bottom: 40px;
-    right: 40px;
-  }
 
   &:hover {
     opacity: 0.8;
